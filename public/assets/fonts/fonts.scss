@@ -1,0 +1,103 @@
+//ABeeZee
+
+@font-face {
+    font-family: 'ABeeZee';
+    src: url('./ABeeZee/ABeeZee-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ABeeZee';
+    src: url('./ABeeZee/ABeeZee-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+//Abhaya Libre
+
+@font-face {
+    font-family: 'Abhaya Libre';
+    src: url('./Abhaya_Libre/AbhayaLibre-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+//Doppio One
+
+@font-face {
+    font-family: 'Doppio One';
+    src: url('./Doppio_One/DoppioOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//Roboto
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./Roboto/Roboto-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./Roboto/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./Roboto/Roboto-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./Roboto/Roboto-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+
+//Sana 
+
+@font-face {
+    font-family: 'Sana';
+    src: url('./sana-sans/SanaSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//Sansation 
+
+@font-face {
+    font-family: 'Sansation';
+    src: url('./Sansation/Sansation-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//Taprom
+
+@font-face {
+    font-family: 'Taprom';
+    src: url('./Taprom/Taprom-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+:root {
+    --font-family: "ABeeZee", sans-serif;
+    --second-family: "Sana", sans-serif;
+    --third-family: "Roboto", sans-serif;
+    --font3: "Taprom", sans-serif;
+    --font4: "Doppio One", sans-serif;
+    --font5: "Abhaya Libre", sans-serif;
+    --font6: "Sansation", sans-serif;
+}

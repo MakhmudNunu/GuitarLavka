@@ -1,0 +1,16 @@
+.navbar {
+    padding: 65px 0 0;
+    &__list {
+        display: flex;
+        justify-content: center;
+        column-gap: 15px;
+        &__item {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 14px;
+            text-align: center;
+            color: #fff;
+            text-transform: uppercase;
+        }
+    }
+}

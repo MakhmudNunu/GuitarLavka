@@ -1,0 +1,13 @@
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h4 {
+        font-family: var(--second-family);
+        font-weight: 400;
+        font-size: 14px;
+        // text-align: center;
+        color: #fff;
+        margin-left: 5px;
+    }
+}

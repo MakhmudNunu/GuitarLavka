@@ -1,0 +1,35 @@
+.geo {
+    span {
+        &:first-of-type {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 13px;
+            text-align: center;
+            color: rgba(184, 172, 172, 0.683);
+
+        }
+
+        &:nth-of-type(2) {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 13px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            margin-left: 15px;
+        }
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .geo {
+        span {
+            font-size: 12px;
+            &:nth-of-type(2) {
+                margin-left: 0;
+            }
+            &:first-of-type {
+                display: none;
+            }
+        }
+    }
+}

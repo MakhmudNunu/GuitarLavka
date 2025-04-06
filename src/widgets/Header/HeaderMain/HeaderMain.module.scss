@@ -1,0 +1,14 @@
+.header {
+    padding: 72px 0 10px;
+    &__container {
+        width: 1057px;
+        margin: 0 auto;
+        &__content {
+            &__main {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+    }
+}

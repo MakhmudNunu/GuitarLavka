@@ -1,0 +1,19 @@
+@import url('../../public/assets/fonts/fonts.scss');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+body {
+    background: #131218;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
