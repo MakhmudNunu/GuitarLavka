@@ -11,3 +11,15 @@
         margin-left: 5px;
     }
 }
+
+@media screen and (max-width: 500px) {
+    .search {
+        order: 2;
+        flex: 0;
+        margin-right: 5px;
+        h4 {
+            display: none;
+        }
+    }
+    
+}

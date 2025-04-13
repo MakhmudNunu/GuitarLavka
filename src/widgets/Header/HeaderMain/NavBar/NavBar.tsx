@@ -6,7 +6,7 @@ const NavBar = () => {
         <nav className={style.navbar}>
             <ul className={style.navbar__list}>
                 <li className={style.navbar__list__item}>
-                    <Link href={'/'}>Каталог</Link>
+                    <Link href={'/Catalog'}>Каталог</Link>
                 </li>
                 <li className={style.navbar__list__item}>
                     <Link href={'/'}>Услуги</Link>
