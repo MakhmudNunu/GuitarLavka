@@ -3,3 +3,11 @@
     align-items: center;
     column-gap: 37px;
 }
+
+@media (max-width: 500px) {
+    .favCart {
+        order: 3;
+        column-gap: 5px;
+    }
+    
+}

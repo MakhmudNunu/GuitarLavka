@@ -3,8 +3,29 @@
     &__container {
         &__content {
             display: flex;
-            justify-content: left;
-            column-gap: 200px;
+            flex-direction: column;
         }
     }
+}
+
+@media screen and (max-width: 758px) {
+    .footer {
+
+        &__container {
+            width: 90%;
+            position: relative;
+        }
+    }
+    
+}
+
+@media screen and (max-width: 500px) {
+    .footer {
+        border-top: 0;
+        padding: 0 0 45px;
+        &__container {
+            width: 90%;
+        }
+    }
+    
 }

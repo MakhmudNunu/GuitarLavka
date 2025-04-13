@@ -1,14 +1,19 @@
+"use client"
+
+import { useState, useEffect } from 'react'
+
+import Bottom from './Bottom/Bottom'
 import styles from './Footer.module.scss'
-import Left from './Left/Left'
-import Right from './Right/Right'
+import Top from './Top/Top'
 
 const Footer = () => {
+
   return (
     <footer className={styles.footer}>
         <div className={`${styles.footer__container} container`}>
             <div className={styles.footer__container__content}>
-                <Right />
-                <Left />
+                <Top />
+                <Bottom />
             </div>
         </div>
     </footer>

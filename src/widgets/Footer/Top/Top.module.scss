@@ -1,0 +1,25 @@
+.top {
+    display: flex;
+    justify-content: space-between;
+    &__left {
+        padding: 31px 0 0;
+        p {
+            font-family: var(--font4);
+            font-weight: 400;
+            font-size: 18px;
+            color: #c4c4c4;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .top {
+        display: block;
+        &__left {
+            padding: 0;
+            p {
+                display: none;
+            }
+        }
+    }
+}

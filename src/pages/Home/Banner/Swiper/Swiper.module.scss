@@ -1,0 +1,130 @@
+.wrapper {
+    position: relative;
+
+    .nextEl,
+    .prevEl {
+        width: 52px;
+        height: 72px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+    }
+
+    .nextEl {
+        right: 10%;
+    }
+
+    .prevEl {
+        left: 10%;
+    }
+
+    .disabled {
+        opacity: 0.4;
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+
+    .swiper {
+        position: relative;
+
+        .slide {
+            .image {
+                width: 100%;
+                height: 400px;
+            }
+
+            .text {
+                position: absolute;
+                z-index: 2;
+                left: 50%;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 500px;
+
+                h2 {
+                    font-family: var(--font-family);
+                    font-weight: 400;
+                    font-size: 36px;
+                    line-height: 97%;
+                    color: #f2f2f2;
+                }
+
+                p {
+                    font-family: var(--font-family);
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 167%;
+                    color: #8f8f8f;
+                    margin-top: 20px;
+                }
+
+                h3 {
+                    font-family: var(--font-family);
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 194%;
+                    color: #8f8f8f;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .wrapper {
+        .nextEl {
+            right: 7%;
+            width: 19px;
+            height: 29px;
+        }
+
+        .prevEl {
+            left: 5%;
+            width: 19px;
+            height: 29px;
+        }
+
+        .swiper {
+            position: relative;
+
+            .slide {
+                .image {
+                    width: 100%;
+                    height: 191;
+                }
+
+                .text {
+                    width: auto;
+                    padding: 60px 0;
+                    h2 {
+                        font-weight: 400;
+                        font-size: 24px;
+                        line-height: 146%;
+                        color: #f2f2f2;
+                    }
+
+                    p {
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 171%;
+                        color: #8f8f8f;
+                        margin-top: 5px;
+                    }
+
+                    h3 {
+                        font-weight: 400;
+                        font-size: 8px;
+                        line-height: 250%;
+                        color: #8f8f8f;
+                    }
+                }
+            }
+        }
+    }
+}

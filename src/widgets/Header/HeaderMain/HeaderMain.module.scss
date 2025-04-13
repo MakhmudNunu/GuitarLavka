@@ -1,13 +1,25 @@
 .header {
     padding: 72px 0 10px;
     &__container {
-        width: 1057px;
+        max-width: 1057px;
         margin: 0 auto;
         &__content {
             &__main {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .header {
+        padding: 18px 0 3px;
+        &__container {
+            width: 90%;
+            &__content {
+                display: block;
             }
         }
     }
