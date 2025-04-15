@@ -1,0 +1,26 @@
+.brends {
+    background: #cc7408;
+    padding: 217px 0 0;
+    &__container {
+        max-width: 1045px;
+        margin: 0 auto;
+        &__content {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            place-items: center;
+        }
+    }
+}
+
+@media (max-width: 1045px) {
+    .brends {
+        &__container {
+            &__content {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                
+            }
+        }
+    }
+}

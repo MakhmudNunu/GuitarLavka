@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react'
-
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 import LogoIcon from '../../../../../public/assets/images/logo.svg'
 
 interface LogoProps {
@@ -8,35 +7,37 @@ interface LogoProps {
 }
 
 const Logo: React.FC<LogoProps> = ({ topPos }) => {
-
-  const [iconPos, setIconPos] = useState<React.CSSProperties['position']>('absolute');
-  const [iconOrder, setIconOrder] = useState(0);
-  const [iconLeft, setIconLeft] = useState(50);
-  const [iconHeight, setIconHeight] = useState(267);
-  const [iconWidth, setIconWidth] = useState(331);
-  const [iconFlex, setIconFlex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
     const handleResize = () => {
-      const width = window.innerWidth;
-      setIconPos(width <= 500 ? 'relative' : 'absolute');
-      setIconOrder(width <= 500 ? 1 : 0);
-      setIconLeft(width <= 500 ? 60.5 : 50);
-      setIconHeight(width <= 500 ? 112 : 267);
-      setIconWidth(width <= 500 ? 196 : 267);
-      setIconFlex(width <= 500 ? 1 : 0);
-    };
+      setIsMobile(window.innerWidth <= 500)
+    }
 
-    handleResize();
-    window.addEventListener('resize', handleResize);
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  const style: React.CSSProperties = {
+    position: isMobile ? 'relative' : 'absolute',
+    top: topPos,
+    left: isMobile ? '60.5px' : '50%',
+    transform: 'translateX(-50%)',
+    width: isMobile ? 196 : 267,
+    height: isMobile ? 112 : 267,
+    order: isMobile ? 1 : 0,
+    flex: isMobile ? 1 : 0,
+  }
+  
 
   return (
-    <>
-      <Image src={LogoIcon} alt="Logo" style={{ position: iconPos, top: topPos, left: `${iconLeft}${iconWidth > 196 && iconHeight > 112 ? '%' : 'px'}`, transform: 'translateX(-50%)', width: iconWidth, height: iconHeight, order: iconOrder, flex: iconFlex }} />
-    </>
+    <Image
+      src={LogoIcon}
+      alt="Logo"
+      style={style}
+      priority
+    />
   )
 }
 

@@ -1,0 +1,15 @@
+import Image from "next/image"
+import { Brends } from "@/entities/type/brends"
+
+interface Props {
+  sizes: Brends
+}
+const Tom: React.FC<Props> = ({ sizes }) => {
+  return (
+    <>
+      <Image src={'/assets/images/tom.webp'} alt="Tom" width={sizes.width} height={sizes.height} />
+    </>
+  )
+}
+
+export default Tom
