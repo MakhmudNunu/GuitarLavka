@@ -1,0 +1,78 @@
+.categories {
+    &__container {
+        max-width: 1059px;
+        margin: 0 auto;
+        position: absolute;
+        bottom: -195px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &__content {
+            width: 1059px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 19px;
+            row-gap: 33px;
+            &__item {
+                position: relative;
+                width: 520px;
+                height: 305px;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.56);
+                }
+                &__up {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 40.67px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    
+                    h2 {
+                        text-align: center;
+                        text-transform: lowercase;
+                        font-family: var(--font-family);
+                        font-weight: 400;
+                        font-size: 24px;
+                        text-align: center;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// @media (max-width: 1050px) {
+//     .categories {
+
+//         &__container {
+//             width: 95%;
+
+//             &__content {
+//                 width: 95%;
+//                 &__item {
+//                     .image {
+//                         width: calc(520px - 50%);
+//                         height: calc(305px - 50%);
+//                     }
+//                     &__up {
+//                         .mediator {
+//                             // width={164.82} height={145.81}
+//                             width: calc(164.82px - 50%);
+//                             height: calc(145.82px - 50%);
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }

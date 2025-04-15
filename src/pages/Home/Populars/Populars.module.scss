@@ -1,0 +1,33 @@
+.populars {
+    padding: 86px 0 65px;
+
+    &__container {
+        width: 1084px;
+        margin: 0 auto;
+
+        &__content {
+            .title {
+                font-family: var(--font-family);
+                font-weight: 400;
+                font-size: 36px;
+                line-height: 97%;
+                text-align: center;
+                color: #fff;
+                margin-bottom: 42px;
+                position: relative;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    width: 300px;
+                    height: 2px;
+                    bottom: -10px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: #D87700;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}

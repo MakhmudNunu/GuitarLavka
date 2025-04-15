@@ -1,5 +1,6 @@
 .navbar {
     padding: 65px 0 0;
+    
     &__list {
         display: flex;
         justify-content: center;
@@ -11,6 +12,8 @@
             text-align: center;
             color: #fff;
             text-transform: uppercase;
+            cursor: pointer;
+            z-index: 5;
         }
     }
 }

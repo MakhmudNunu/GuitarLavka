@@ -8,13 +8,15 @@ import { Navigation } from 'swiper/modules';
 
 import Image from 'next/image';
 import { useRef, useState, useEffect } from 'react';
+import MoreButton from './ui/MoreButton/MoreButton';
+// import MoreButton from './MoreButton/MoreButton';
 
 interface Banner {
   image: string;
   itemType?: string;
   title: string;
   description: string;
-  path?: string;
+  path: string;
 }
 
 const banners: Banner[] = [
@@ -51,13 +53,14 @@ export default function Swiper() {
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
   const [iconSize, setIconSize] = useState({ width: 52, height: 72 });
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-      setIconSize(width <= 500 ? {...iconSize,width:24, height: 36} : {...iconSize,width:52, height: 72});
+      setIconSize(width <= 500 ? { ...iconSize, width: 24, height: 36 } : { ...iconSize, width: 52, height: 72 });
+      setIsMobile(width <= 500);
     };
-
     handleResize();
     window.addEventListener('resize', handleResize);
 
@@ -111,6 +114,7 @@ export default function Swiper() {
                 alt={banner.title}
                 fill={true}
                 style={{ objectFit: 'cover' }}
+                priority
               />
             </div>
             <div className={styles.text}>
@@ -121,6 +125,7 @@ export default function Swiper() {
           </SwiperSlide>
         ))}
       </SwiperComponent>
+      <MoreButton />
     </div>
   );
 }

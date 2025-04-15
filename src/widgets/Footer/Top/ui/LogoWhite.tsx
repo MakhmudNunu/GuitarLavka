@@ -13,7 +13,7 @@ interface LogoWhiteProps {
 const LogoWhite: React.FC<LogoWhiteProps> = ({ left, width }) => {
   return (
     <>
-        <Image width={width} src={logo} alt='logo' style={{position: 'relative', left: left || 0}} />
+        <Image loading='lazy' width={width} src={logo} alt='logo' style={{position: 'relative', left: left || 0}} />
     </>
   )
 }
