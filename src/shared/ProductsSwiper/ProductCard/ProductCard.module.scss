@@ -37,7 +37,6 @@
             justify-content: space-between;
             align-items: center;
             grid-row: 3;
-
             h4 {
                 font-family: var(--font-family);
                 font-weight: 400;
@@ -55,6 +54,7 @@
                     color: rgba(255, 255, 255, 0.6);
                     left: 0;
                     top: -18px;
+
                     &::after {
                         content: '';
                         position: absolute;
@@ -67,7 +67,7 @@
                         transform: rotate(10deg);
                         transform-origin: center;
                         pointer-events: none;
-                      }
+                    }
                 }
             }
 
@@ -78,6 +78,16 @@
                 text-align: center;
                 color: rgba(255, 255, 255, 0.6);
             }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+
+        &__info {
+            grid-template-rows: 50px 15px 40px;
+
         }
     }
 }

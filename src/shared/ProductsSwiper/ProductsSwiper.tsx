@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useMemo } from 'react';
 
 import Image from 'next/image';
 
@@ -26,17 +26,29 @@ const ProductsSwiper: React.FC<IProps> = ({ products }) => {
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
   const [iconSize, setIconSize] = useState({ width: 52, height: 72 });
+  const [chunkSize, setChunkSize] = useState(4);
 
-  const chunkSize = 4;
-  const groupedProducts = [];
-  for (let i = 0; i < products.length; i += chunkSize) {
-    groupedProducts.push(products.slice(i, i + chunkSize));
-  }
+  const groupedProducts = useMemo(() => {
+    const result = [];
+    for (let i = 0; i < products.length; i += chunkSize) {
+      result.push(products.slice(i, i + chunkSize));
+    }
+    return result;
+  }, [products, chunkSize]);
 
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-      setIconSize(width <= 500 ? { width: 24, height: 36 } : { width: 52, height: 72 });
+      setIconSize(width <= 768 ? { width: 24, height: 36 } : { width: 52, height: 72 });
+      if (width <= 500) {
+        setChunkSize(1);
+      } else if (width <= 768) {
+        setChunkSize(2);
+      } else if (width <= 1050) {
+        setChunkSize(3);
+      } else {
+        setChunkSize(4);
+      }
     };
     handleResize();
     window.addEventListener('resize', handleResize);
@@ -101,7 +113,7 @@ const ProductsSwiper: React.FC<IProps> = ({ products }) => {
         loop={false}
         className={styles.swiper}
       >
-        {groupedProducts.map((items, index) => (
+        {groupedProducts.slice(0, 16).map((items, index) => (
           <SwiperSlide key={index}>
             <div className={styles.productsGrid}>
               {items.map((item) => (

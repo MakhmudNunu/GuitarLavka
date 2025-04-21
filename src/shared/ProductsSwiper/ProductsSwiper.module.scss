@@ -32,11 +32,10 @@
         background: none;
         border: none;
         cursor: pointer;
-        transition: opacity 0.3s ease;
+        transition: opacity .3s;
 
-        @media (max-width: 500px) {
-            width: 24px;
-            height: 36px;
+        @media (max-width: 768px) {
+            display: none;
         }
     }
 
@@ -53,18 +52,20 @@
         pointer-events: none;
         cursor: not-allowed;
     }
+
     .productsGrid {
         display: grid;
         grid-template-columns: repeat(4, 220px);
+        place-items: center;
         justify-content: center;
         gap: 20px;
 
-        @media (max-width: 1024px) {
-            grid-template-columns: repeat(3, 1fr);
+        @media (max-width: 1050px) {
+            grid-template-columns: repeat(3, 220px);
         }
 
         @media (max-width: 768px) {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 220px);
         }
 
         @media (max-width: 500px) {

@@ -23,14 +23,15 @@
 }
 
 
+// @media screen and (max-width: 768px) {
+//     .footer__nav {
+//         flex-direction: column;
+//         row-gap: 20px;
+//     }
+// }
+
+
 @media screen and (max-width: 768px) {
-    .footer__nav {
-        // flex-direction: column;
-    }
-}
-
-
-@media screen and (max-width: 500px) {
     .footer__nav {
         width: 100%;
         padding: 16px 0 0;

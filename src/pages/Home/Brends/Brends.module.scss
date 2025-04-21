@@ -1,9 +1,11 @@
 .brends {
     background: #cc7408;
     padding: 217px 0 0;
+
     &__container {
         max-width: 1045px;
         margin: 0 auto;
+
         &__content {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
@@ -16,11 +18,19 @@
 @media (max-width: 1045px) {
     .brends {
         &__container {
+            max-width: 95%;
+
             &__content {
                 grid-template-columns: repeat(3, 1fr);
                 grid-template-rows: repeat(3, 1fr);
-                
+
             }
         }
+    }
+}
+
+@media (max-width: 768px) {
+    .brends {
+        padding: 50px 0 0;
     }
 }

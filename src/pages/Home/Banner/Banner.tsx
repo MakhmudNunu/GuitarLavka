@@ -1,3 +1,5 @@
+'use client';
+
 import Categories from '../Categories/Categories'
 import styles from './Banner.module.scss'
 import Swiper from './Swiper/Swiper'

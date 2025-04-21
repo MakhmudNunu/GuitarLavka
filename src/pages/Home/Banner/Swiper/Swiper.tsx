@@ -9,7 +9,6 @@ import { Navigation } from 'swiper/modules';
 import Image from 'next/image';
 import { useRef, useState, useEffect } from 'react';
 import MoreButton from './ui/MoreButton/MoreButton';
-// import MoreButton from './MoreButton/MoreButton';
 
 interface Banner {
   image: string;
@@ -21,7 +20,7 @@ interface Banner {
 
 const banners: Banner[] = [
   {
-    image: '/assets/images/Banners/banner1/banner1_1x.webp',
+    image: '/assets/images/Banners/banner1/banner1_1x.avif',
     title: 'Takamine',
     itemType: 'Гитара',
     description: 'винтажная 12 струнная GJ72CE - 12BSB',
@@ -105,9 +104,10 @@ export default function Swiper() {
         slidesPerView={1}
         loop={false}
         className={styles.swiper}
+        
       >
         {banners.map((banner, index) => (
-          <SwiperSlide key={index} className={styles.slide}>
+          <SwiperSlide  key={index} className={styles.slide}>
             <div className={styles.image}>
               <Image
                 src={banner.image}

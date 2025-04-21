@@ -3,43 +3,38 @@
     align-items: center;
     column-gap: 5px;
 
-    .tel {
-        display: flex;
-        align-items: center;
-        h5 {
-            font-family: var(--font-family);
-            font-weight: 400;
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.6);
-            margin: 0 15px
-        }
-    }
-
     h5 {
         font-family: var(--font-family);
         font-weight: 400;
         font-size: 14px;
         color: rgba(255, 255, 255, 0.6);
+        position: relative;
+
+        &:first-of-type::before {
+            content: '';
+            width: 14px;
+            height: 12px;
+            background: url('/assets/images/tel.svg') no-repeat center center;
+            position: absolute;
+            left: -18px;
+            top: 50%;
+            transform: translateY(-55%);
+        }
+
     }
 }
 
 @media screen and (max-width: 1000px) {
     .graphick {
         flex-direction: column;
+        align-items: start;
     }
 
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
     .graphick {
-        .tel {
-            display: flex;
-            h5 {
-                display: block;
-                margin: 0;
-            }
-        }
-        h5 {
+        .days,.hours {
             display: none;
         }
     }

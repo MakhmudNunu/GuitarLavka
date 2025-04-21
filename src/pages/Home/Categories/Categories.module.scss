@@ -14,10 +14,12 @@
             grid-template-rows: repeat(2, 1fr);
             gap: 19px;
             row-gap: 33px;
+
             &__item {
                 position: relative;
                 width: 520px;
                 height: 305px;
+
                 &::before {
                     content: "";
                     position: absolute;
@@ -27,15 +29,17 @@
                     height: 100%;
                     background: rgba(0, 0, 0, 0.56);
                 }
+
                 &__up {
                     display: flex;
                     flex-direction: column;
+                    align-items: center;
                     row-gap: 40.67px;
                     position: absolute;
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%, -50%);
-                    
+                    text-align: center;
                     h2 {
                         text-align: center;
                         text-transform: lowercase;
@@ -51,28 +55,136 @@
     }
 }
 
-// @media (max-width: 1050px) {
-//     .categories {
+@media (max-width: 1050px) {
+    .categories {
 
-//         &__container {
-//             width: 95%;
+        &__container {
 
-//             &__content {
-//                 width: 95%;
-//                 &__item {
-//                     .image {
-//                         width: calc(520px - 50%);
-//                         height: calc(305px - 50%);
-//                     }
-//                     &__up {
-//                         .mediator {
-//                             // width={164.82} height={145.81}
-//                             width: calc(164.82px - 50%);
-//                             height: calc(145.82px - 50%);
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
+            &__content {
+
+                width: 95%;
+
+                &__item {
+                    width: calc(520px * 0.85);
+                    height: calc(305px * 0.85);
+                    border-radius: 20px;
+
+                    &::before {
+                        border-radius: 20px;
+                    }
+
+                    &__up {
+
+                        .mediator {
+                            width: calc(164.82px * 0.85);
+                            height: calc(145.82px * 0.85);
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 900px) {
+    .categories {
+
+        &__container {
+
+            &__content {
+                &__item {
+                    width: calc(520px * 0.65);
+                    height: calc(305px * 0.65);
+
+                    &__up {
+                        row-gap: 20.71px;
+
+                        .mediator {
+                            width: calc(164.82px * 0.65);
+                            height: calc(145.82px * 0.65);
+                        }
+
+                        h2 {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .categories {
+
+        &__container {
+            bottom: -27px;
+            left: 50%;
+
+            &__content {
+
+                &__item {
+                    width: calc(520px * 0.55);
+                    height: calc(305px * 0.55);
+                    &__up {
+                        width: 87px;
+                        height: 84px;
+                        row-gap: 10.71px;
+                        .mediator {
+                            width: 45px;
+                            height: 44px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 630px) {
+    .categories {
+
+        &__container {
+            &__content {
+                &__item {
+                    width: calc(520px * 0.45);
+                    height: calc(305px * 0.45);
+                    &__up {
+                        width: 87px;
+                        height: 84px;
+                        .mediator {
+                            width: 45px;
+                            height: 44px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .categories {
+
+        &__container {
+            &__content {
+                &__item {
+                    width: 141px;
+                    height: 102px;
+
+                    &__up {
+                        width: 87px;
+                        height: 84px;
+                        .mediator {
+                            width: 45px;
+                            height: 44px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
