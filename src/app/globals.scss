@@ -53,3 +53,26 @@ body.menu-open {
         max-width: 90%;
     }
 }
+
+
+//Custom Pagination
+
+.customPagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 22px;
+}
+
+.customPagination .swiper-pagination-bullet {
+    width: 40px;
+    height: 5px;
+    margin: 0 20px;
+    background: #3b3a40;
+    border-radius: 0;
+    opacity: 1;
+    transition: background-color 0.3s ease;
+}
+
+.customPagination .swiper-pagination-bullet-active {
+    background: #c4c4c4;
+}
