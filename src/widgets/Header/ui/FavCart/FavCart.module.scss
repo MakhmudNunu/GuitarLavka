@@ -1,10 +1,10 @@
 .favCart {
     display: flex;
     align-items: center;
-    column-gap: 37px;
+    column-gap: 13px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
     .favCart {
         order: 3;
         column-gap: 5px;

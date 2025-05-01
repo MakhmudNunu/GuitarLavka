@@ -39,20 +39,23 @@
                     height: 400px;
                     position: relative;
                     overflow: hidden;
+
                     &:last-of-type {
                         display: none;
                     }
+
                     &:hover {
                         .services__container__content__main__item__info {
                             bottom: 0;
                             height: 100%;
-                            padding: 17px 32px  19px  32px ;
+                            padding: 17px 32px 19px 32px;
+
                             h2 {
                                 display: none;
                             }
                         }
                     }
-                    
+
                     &__info {
                         width: 100%;
                         height: 125%;
@@ -63,9 +66,9 @@
                         align-items: center;
                         position: absolute;
                         bottom: -100%;
-                        padding: 32px 32px  0  32px ;
+                        padding: 32px 32px 0 32px;
                         overflow: hidden;
-                        transition: 0.8s;
+                        transition: bottom 0.8s, height 0.8s, padding 0.8s;
                         h2 {
                             font-family: var(--font-family);
                             font-weight: 400;
@@ -95,6 +98,175 @@
                             border: none;
                             text-transform: uppercase;
                             cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1050px) {
+    .services {
+
+
+        &__container {
+            width: 95%;
+
+            &__content {
+
+                &__main {
+                    display: grid;
+                    grid-template-columns: repeat(2, auto);
+                    justify-content: center;
+                    gap: 20px;
+
+                    &__item {
+                        width: 350px;
+                        height: 200px;
+                        pointer-events: none;
+                        border-radius: 25px;
+
+                        &:last-of-type {
+                            display: block;
+                        }
+
+
+                        &__info {
+                            width: 100%;
+                            height: 100;
+                            bottom: 0;
+
+                           
+
+                            p {
+                                display: none;
+                            }
+
+                            &__button {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .services {
+        &__container {
+            width: 95%;
+
+            &__content {
+
+                &__main {
+                    display: grid;
+                    grid-template-columns: repeat(2, auto);
+                    justify-content: center;
+                    gap: 20px;
+
+                    &__item {
+                        width: 250px;
+                        height: 125px;
+                        pointer-events: none;
+                        border-radius: 25px;
+
+                        &:last-of-type {
+                            display: block;
+                        }
+
+
+                        &__info {
+                            width: 100%;
+                            height: 100;
+                            bottom: 0;
+
+
+                            p {
+                                display: none;
+                            }
+
+                            &__button {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .services {
+        padding: 0 0 23px;
+        &__container {
+            width: 95%;
+
+            &__content {
+                .title {
+                    font-size: 18px;
+                    line-height: 194%;
+                    margin-bottom: 22px;
+                    &::after {
+                        width: 240px;
+                        bottom: 0;
+                    }
+                }
+
+                &__main {
+                    // display: grid;
+                    // grid-template-columns: repeat(2, auto);
+                    // justify-content: center;
+                    // gap: 20px;
+                    height: 260px;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    align-content: center;
+                    justify-content: center;
+                    column-gap: 14px;
+                    row-gap: 22px;
+
+                    &__item {
+                        border-radius: 5px;
+                        width: 141px;
+                        height: 102px;
+                        pointer-events: none;
+                        overflow: visible;
+
+                        &:last-of-type {
+                            display: block;
+                        }
+
+                        &:nth-of-type(3) {
+                            margin-top: 25px;
+                        }
+
+                        &__info {
+                            width: 100%;
+                            height: 100%;
+                            position: relative;
+                            overflow: visible;
+
+                            h2 {
+                                font-size: 12px;
+                                line-height: 292%;
+                                position: absolute;
+                                bottom: -28px;
+
+                            }
+
+                            p {
+                                display: none;
+                            }
+
+                            &__button {
+                                display: none;
+                            }
                         }
                     }
                 }

@@ -4,7 +4,9 @@
     &__container {
         width: 1084px;
         margin: 0 auto;
-
+        @media (max-width: 1050px) {
+            width: 95%;
+        }
         &__content {
             .title {
                 font-family: var(--font-family);

@@ -8,12 +8,12 @@
     }
 }
 
-@media screen and (max-width: 758px) {
+@media screen and (max-width: 768px) {
     .footer {
-
+        border-top: 0;
+        padding: 0 0 45px;
         &__container {
             width: 90%;
-            position: relative;
         }
     }
     
@@ -21,11 +21,7 @@
 
 @media screen and (max-width: 500px) {
     .footer {
-        border-top: 0;
-        padding: 0 0 45px;
-        &__container {
-            width: 90%;
-        }
+        display: none;
     }
     
 }

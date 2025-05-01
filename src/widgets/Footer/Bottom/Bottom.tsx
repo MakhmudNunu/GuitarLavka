@@ -16,9 +16,9 @@ const Bottom = () => {
     useEffect(() => {
       const handleResize = () => {
         const width = window.innerWidth;
-        setIconSize(width <= 500 ? 25 : 19);
-        setDisplay(width <= 500 ? 'flex' : 'flex');
-        setPosition(width <= 500 ? 'absolute' : 'relative');
+        setIconSize(width <= 768 ? 25 : 19);
+        setDisplay(width <= 768 ? 'flex' : 'flex');
+        setPosition(width <= 768 ? 'absolute' : 'relative');
       };
   
       handleResize();

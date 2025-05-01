@@ -1,28 +1,34 @@
-.moreButton {
+.container {
     position: absolute;
     bottom: 10%;
     left: 50%;
-    z-index: 10;
-    border-radius: 5px;
-    width: 168px;
-    height: 36px;
-    background: rgba(216, 119, 0, 0.74);
-    border: none;
-    font-family: var(--font6);
-    font-weight: 400;
-    font-size: 14px;
-    text-align: center;
-    color: #fff;
+    .moreButton {
+
+        z-index: 10;
+        border-radius: 5px;
+        width: 168px;
+        height: 36px;
+        background: rgba(216, 119, 0, 0.74);
+        border: none;
+        font-family: var(--font6);
+        font-weight: 400;
+        font-size: 14px;
+        text-align: center;
+        color: #fff;
+    }
+
 }
 
-@media (max-width: 768px) {}
-
 @media (max-width: 500px) {
-    .moreButton {
-        width: 117px;
-        height: 22px;
-        font-size: 11px;
-        bottom: -13px;
-        transform: translate(-50%, calc(50% + 13px));
+    .container {
+        bottom: -30%;
+        left: 47%;
+        .moreButton {
+            width: 117px;
+            height: 22px;
+            font-size: 11px;
+            bottom: -13px;
+            transform: translate(-50%, calc(50% + 13px));
+        }
     }
 }

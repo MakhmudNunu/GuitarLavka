@@ -14,8 +14,8 @@ const Top = () => {
     useEffect(() => {
       const handleResize = () => {
         const width = window.innerWidth;
-        setIconSize(width <= 500 ? 230 : 386);
-        setIconLeft(width <= 500 ? -10 : -15);
+        setIconSize(width <= 768 ? 230 : 386);
+        setIconLeft(width <= 768 ? -10 : -15);
       };
   
       handleResize();

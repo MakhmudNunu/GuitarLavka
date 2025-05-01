@@ -1,10 +1,10 @@
 .navbar {
-    padding: 65px 0 0;
-    
     &__list {
         display: flex;
         justify-content: center;
+        align-content: flex-start;
         column-gap: 15px;
+
         &__item {
             font-family: var(--font-family);
             font-weight: 400;
@@ -18,7 +18,7 @@
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1010px) {
     .navbar {
         display: none;
     }

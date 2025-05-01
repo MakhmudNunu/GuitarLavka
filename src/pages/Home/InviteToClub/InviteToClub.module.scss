@@ -4,7 +4,7 @@
     &__container {
         &__content {
             border-radius: 0 171px 171px 0;
-            width: 1152px;
+            width: 75%;
             height: 343px;
             position: relative;
             
@@ -21,3 +21,13 @@
         }
     }
 }
+
+// @media (max-width: 1050px) {
+//     .inviteToClub {
+//         &__container {
+//             &__content {
+//                 width: 800px;
+//             }
+//         }
+//     }
+// }

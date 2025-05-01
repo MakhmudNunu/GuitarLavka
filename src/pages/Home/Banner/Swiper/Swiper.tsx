@@ -7,9 +7,9 @@ import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 
 import Image from 'next/image';
-import { useRef, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import MoreButton from './ui/MoreButton/MoreButton';
-// import MoreButton from './MoreButton/MoreButton';
+import Button from '@/shared/ui/ButtonForSwiper/Button';
 
 interface Banner {
   image: string;
@@ -49,27 +49,10 @@ const banners: Banner[] = [
 ];
 
 export default function Swiper() {
-  const swiperRef = useRef<any>(null);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
-  const [iconSize, setIconSize] = useState({ width: 52, height: 72 });
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth;
-      setIconSize(width <= 500 ? { ...iconSize, width: 24, height: 36 } : { ...iconSize, width: 52, height: 72 });
-      setIsMobile(width <= 500);
-    };
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   const handleSwiper = (swiper: any) => {
-    swiperRef.current = swiper;
-
     setIsBeginning(swiper.isBeginning);
     setIsEnd(swiper.isEnd);
 
@@ -81,18 +64,7 @@ export default function Swiper() {
 
   return (
     <div className={styles.wrapper}>
-      <button
-        className={`${styles.prevEl} prevEl ${isBeginning ? styles.disabled : ''}`}
-        disabled={isBeginning}
-      >
-        <Image src="/assets/images/prev.svg" alt="arrow left" width={iconSize.width} height={iconSize.height} />
-      </button>
-      <button
-        className={`${styles.nextEl} nextEl ${isEnd ? styles.disabled : ''}`}
-        disabled={isEnd}
-      >
-        <Image src="/assets/images/next.svg" alt="arrow right" width={iconSize.width} height={iconSize.height} />
-      </button>
+
 
       <SwiperComponent
         modules={[Navigation]}
@@ -106,15 +78,19 @@ export default function Swiper() {
         loop={false}
         className={styles.swiper}
       >
+        <Button src={'/assets/images/prev.svg'} alt={'prev button'} isBeginning={isBeginning} className={'prevEl'} />
+
+        <Button src={'/assets/images/next.svg'} alt={'next button'} isEnd={isEnd} className={'nextEl'} />
+
         {banners.map((banner, index) => (
           <SwiperSlide key={index} className={styles.slide}>
             <div className={styles.image}>
               <Image
                 src={banner.image}
                 alt={banner.title}
-                fill={true}
+                fill
                 style={{ objectFit: 'cover' }}
-                priority
+                priority={index === 0}
               />
             </div>
             <div className={styles.text}>
@@ -122,10 +98,10 @@ export default function Swiper() {
               {banner.itemType && <h3>{banner.itemType}</h3>}
               <p>{banner.description}</p>
             </div>
+            <MoreButton />
           </SwiperSlide>
         ))}
       </SwiperComponent>
-      <MoreButton />
     </div>
   );
 }

@@ -56,7 +56,7 @@ const Services = () => {
                                     style={{
                                         backgroundImage: `url(${item.image})`,
                                         backgroundSize: 'cover',
-                                        backgroundPosition: 'center'
+                                        backgroundPosition: 'left'
                                     }}
                                 >
                                     <div className={styles.services__container__content__main__item__info}>
