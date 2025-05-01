@@ -1,14 +1,16 @@
-import FavCart from './FavCart/FavCart'
+'use client'
+
+import FavCart from '../ui/FavCart/FavCart'
 import styles from './HeaderMain.module.scss'
-import Logo from './Logo/Logo'
-import NavBar from './NavBar/NavBar'
-import Search from './Search/Search'
+import Logo from '../ui/Logo'
+import NavBar from '../ui/FavCart/NavBar/NavBar'
+import Search from '../ui/Search/Search'
+import Link from 'next/link'
 
 function HeaderMain() {
 
-
-
   let topPos = 0
+
 
   return (
     <header className={styles.header}>
@@ -16,15 +18,15 @@ function HeaderMain() {
         <div className={styles.header__container__content}>
           <div className={styles.header__container__content__main}>
             <Search />
-            <Logo topPos={topPos} />
+            <Logo topPos={topPos} order={1}  />
             <FavCart />
           </div>
           <div className={styles.header__container__content__nav}>
-            <NavBar />
+            <NavBar/>
           </div>
         </div>
       </div>
-    </header>
+    </header >
   )
 }
 

@@ -1,0 +1,76 @@
+.nextEl,
+.prevEl {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &.nextEl,
+    &.prevEl {
+        z-index: 2;
+        background: none;
+        border: none;
+    }
+
+    &:first-of-type {
+        left: 10%;
+    }
+
+    &:last-of-type {
+        right: 10%;
+    }
+
+    &.disabled {
+        opacity: 0.4;
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+}
+
+.swiperNextEl,
+.swiperPrevEl {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &.swiperNextEl,
+    &.swiperPrevEl {
+        z-index: 2;
+        background: none;
+        border: none;
+    }
+
+    &:first-of-type {
+        left: 10%;
+    }
+
+    &:last-of-type {
+        right: 10%;
+    }
+
+    &.disabled {
+        opacity: 0.4;
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .nextEl,
+    .prevEl {
+        top: 35%;
+
+        .image {
+            width: 34px;
+            height: 46px;
+
+        }
+    }
+
+    .swiperNextEl,
+    .swiperPrevEl {
+        display: none;
+    }
+}

@@ -1,0 +1,24 @@
+.headerM {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #131218;
+    z-index: 100;
+    padding: 20px 0;
+    border-top: 1px solid #303032;
+    display: none;
+    &__containerM {
+        &__contentM {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .headerM {
+        display: block;
+    }
+}

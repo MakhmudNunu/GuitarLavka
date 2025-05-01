@@ -11,6 +11,7 @@ const products = [
         image: '/assets/images/card.webp',
         feedbacks: 12,
         discount: 10123,
+        link: '/more'
     },
     {
         id: 2,
@@ -20,6 +21,7 @@ const products = [
         rate: 4.8,
         image: '/assets/images/card.webp',
         feedbacks: 12,
+        link: '/more'
     },
     {
         id: 3,
@@ -29,6 +31,7 @@ const products = [
         rate: 4.5,
         image: '/assets/images/card.webp',
         feedbacks: 12,
+        link: '/more'
     },
     {
         id: 4,
@@ -38,6 +41,7 @@ const products = [
         rate: 4.8,
         image: '/assets/images/card.webp',
         feedbacks: 12,
+        link: '/more'
     },
     {
         id: 5,
@@ -47,6 +51,7 @@ const products = [
         rate: 4.5,
         image: '/assets/images/card.webp',
         feedbacks: 12,
+        link: '/more'
     },
     {
         id: 6,
@@ -56,6 +61,7 @@ const products = [
         rate: 4.8,
         image: '/assets/images/card.webp',
         feedbacks: 12,
+        link: '/more'
     },
     {
         id: 7,
@@ -65,6 +71,7 @@ const products = [
         rate: 4.5,
         image: '/assets/images/card.webp',
         feedbacks: 12,
+        link: '/more'
     },
     {
         id: 8,
@@ -74,6 +81,7 @@ const products = [
         rate: 4.8,
         image: '/assets/images/card.webp',
         feedbacks: 12,
+        link: '/more'
     },
     {
         id: 9,
@@ -83,6 +91,7 @@ const products = [
         rate: 4.8,
         image: '/assets/images/card.webp',
         feedbacks: 12,
+        link: '/more'
     },
     {
         id: 10,
@@ -92,6 +101,7 @@ const products = [
         rate: 4.5,
         image: '/assets/images/card.webp',
         feedbacks: 12,
+        link: '/more'
     },
     {
         id: 11,
@@ -101,6 +111,7 @@ const products = [
         rate: 4.8,
         image: '/assets/images/card.webp',
         feedbacks: 12,
+        link: '/more'
     },
     {
         id: 12,
@@ -110,6 +121,7 @@ const products = [
         rate: 4.5,
         image: '/assets/images/card.webp',
         feedbacks: 12,
+        link: '/more'
     },
     {
         id: 13,
@@ -119,6 +131,7 @@ const products = [
         rate: 4.8,
         image: '/assets/images/card.webp',
         feedbacks: 12,
+        link: '/more'
     },
     {
         id: 14,
@@ -128,6 +141,7 @@ const products = [
         rate: 4.5,
         image: '/assets/images/card.webp',
         feedbacks: 12,
+        link: '/more'
     },
     {
         id: 15,
@@ -137,6 +151,7 @@ const products = [
         rate: 4.8,
         image: '/assets/images/card.webp',
         feedbacks: 12,
+        link: '/more'
     },
     {
         id: 16,
@@ -146,6 +161,7 @@ const products = [
         rate: 4.5,
         image: '/assets/images/card.webp',
         feedbacks: 12,
+        link: '/more'
     },
     {
         id: 17,
@@ -155,6 +171,7 @@ const products = [
         rate: 4.8,
         image: '/assets/images/card.webp',
         feedbacks: 12,
+        link: '/more'
     }
 ]
 

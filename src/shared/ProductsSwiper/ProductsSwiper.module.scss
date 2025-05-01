@@ -21,55 +21,26 @@
 .wrapper {
     position: relative;
 
-    .nextEl,
-    .prevEl {
-        width: 52px;
-        height: 72px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 2;
-        background: none;
-        border: none;
-        cursor: pointer;
-        transition: opacity .3s;
-
+    .swiperNextEl,
+    .swiperPrevEl {
+        
         @media (max-width: 768px) {
             display: none;
         }
     }
 
-    .nextEl {
+    .swiperNextEl {
         right: 0;
     }
 
-    .prevEl {
+    .swiperPrevEl {
         left: 0;
     }
 
-    .disabled {
-        opacity: 0.4;
-        pointer-events: none;
-        cursor: not-allowed;
-    }
-
-    .productsGrid {
-        display: grid;
-        grid-template-columns: repeat(4, 220px);
-        place-items: center;
-        justify-content: center;
-        gap: 20px;
-
-        @media (max-width: 1050px) {
-            grid-template-columns: repeat(3, 220px);
-        }
-
-        @media (max-width: 768px) {
-            grid-template-columns: repeat(2, 220px);
-        }
-
-        @media (max-width: 500px) {
-            grid-template-columns: 1fr;
+    .swiper {
+        .swiperSlide {
+            display: flex;
+            justify-content: center;
         }
     }
 }

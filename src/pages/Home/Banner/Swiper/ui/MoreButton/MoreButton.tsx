@@ -3,13 +3,11 @@ import styles from './MoreButton.module.scss';
 
 const MoreButton = () => {
   return (
-    <>
-      <button className={styles.moreButton}>
-        <Link href="/more">
+      <Link className={styles.container} href="/more">
+        <button className={styles.moreButton}>
           подробнее
-        </Link>
-      </button>
-    </>
+        </button>
+      </Link>
   )
 }
 

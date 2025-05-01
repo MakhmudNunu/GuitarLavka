@@ -1,13 +1,14 @@
 .header {
     padding: 72px 0 10px;
     &__container {
-        max-width: 1057px;
+        width: 1057px;
         margin: 0 auto;
         &__content {
             &__main {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                padding: 0 0 65px;
             }
         }
     }
@@ -19,8 +20,16 @@
         &__container {
             width: 90%;
             &__content {
-                display: block;
+                &__main {
+                    padding: 0;
+                }
             }
         }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .header {
+        display: none;
     }
 }

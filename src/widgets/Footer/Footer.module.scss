@@ -8,13 +8,20 @@
     }
 }
 
-@media screen and (max-width: 7658px) {
+@media screen and (max-width: 768px) {
     .footer {
         border-top: 0;
         padding: 0 0 45px;
         &__container {
             width: 90%;
         }
+    }
+    
+}
+
+@media screen and (max-width: 500px) {
+    .footer {
+        display: none;
     }
     
 }

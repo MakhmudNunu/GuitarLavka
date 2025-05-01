@@ -7,4 +7,5 @@ export interface IProducts {
     rate: number
     feedbacks: number
     image: string
+    link: string
 }
