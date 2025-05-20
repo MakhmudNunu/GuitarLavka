@@ -18,25 +18,25 @@ const NavBar: React.FC<NavBarProps> = ({ padding, flex }) => {
                     <Link href={'/Catalog'}>Каталог</Link>
                 </li>
                 <li className={style.navbar__list__item}>
-                    <Link href={'/'}>Услуги</Link>
+                    <Link href={'/Services'}>Услуги</Link>
                 </li>
                 <li className={style.navbar__list__item}>
-                    <Link href={'/'}>О нас</Link>
+                    <Link href={'/AboutUs'}>О нас</Link>
                 </li>
                 <li className={style.navbar__list__item}>
-                    <Link href={'/'}>Доставка</Link>
+                    <Link href={'/Delivery'}>Доставка</Link>
                 </li>
                 <li className={style.navbar__list__item}>
-                    <Link href={'/'}>Отзывы</Link>
+                    <Link href={'/Feedbacks'}>Отзывы</Link>
                 </li>
                 <li className={style.navbar__list__item}>
-                    <Link href={'/'}>Обучение</Link>
+                    <Link href={'/Learning'}>Обучение</Link>
                 </li>
                 <li className={style.navbar__list__item}>
-                    <Link href={'/'}>Контакты</Link>
+                    <Link href={'/Contacts'}>Контакты</Link>
                 </li>
                 <li className={style.navbar__list__item}>
-                    <Link href={'/'}>Опт</Link>
+                    <Link href={'/Opt'}>Опт</Link>
                 </li>
             </ul>
         </nav>

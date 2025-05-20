@@ -1,0 +1,21 @@
+.lookTheSame {
+    padding-bottom: 30px;
+    &__container {
+        width: 959px;
+        margin: 0 auto;
+
+        &__content {
+            
+            .rules {
+                margin-top: 25px;
+                p {
+                    font-family: var(--font-family);
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 139%;
+                    color: #3b3a40;
+                }
+            }
+        }
+    }
+}

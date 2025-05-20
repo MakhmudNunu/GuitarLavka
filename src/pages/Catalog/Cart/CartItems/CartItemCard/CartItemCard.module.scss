@@ -1,0 +1,94 @@
+.card {
+    display: flex;
+    align-items: center;
+    padding: 16px 0;
+    border-top: 2px solid #242424;
+
+    &__left {
+        display: flex;
+        width: 460px;
+        column-gap: 9px;
+
+        &__info {
+            padding: 22px 0 14px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 11px;
+
+            &__title {
+
+                h4,
+                h3 {
+
+                    font-family: var(--font-family);
+                    font-weight: 400;
+                    font-size: 18px;
+                    color: #fff;
+
+                }
+            }
+
+            &__specs {
+                p {
+                    font-family: var(--font-family);
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 143%;
+                    color: rgba(255, 255, 255, 0.6);
+                }
+            }
+        }
+    }
+
+    &__center {
+        display: flex;
+        align-items: center;
+        width: 100px;
+        column-gap: 5px;
+
+        button {
+            background: none;
+            border: none;
+            position: relative;
+            bottom: -2px;
+        }
+
+        h3 {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 18px;
+            color: #fff;
+        }
+    }
+
+    &__right {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 24px;
+        color: #fff;
+        position: relative;
+
+        span {
+            position: absolute;
+            top: -25px;
+            right: -10px;
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 250%;
+            color: rgba(255, 255, 255, 0.6);
+
+            // text-decoration: line-through;
+            &::after {
+                content: '';
+                position: absolute;
+                height: 1px;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.6);
+                display: block;
+                top: 50%;
+                transform: rotate(7deg) translateY(-50%);
+            }
+        }
+    }
+}

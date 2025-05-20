@@ -1,0 +1,52 @@
+.personal {
+    &__container {
+        width: 934px;
+        margin: 0 auto;
+
+        &__content {
+            h1 {
+                font-family: var(--font-family);
+                font-weight: 400;
+                font-size: 36px;
+                line-height: 97%;
+                text-align: center;
+                color: #fff;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    border: 2px solid #d87700;
+                    width: 300px;
+                    height: 0px;
+                    position: absolute;
+                    bottom: -16px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+
+            &__cards {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                margin-top: 50px;
+                row-gap: 10px;
+                &__card {
+                    margin: 0 0 17px;
+
+                    h2 {
+                        text-align: center;
+                        margin-top: 12px;
+                        font-family: var(--font-family);
+                        font-weight: 400;
+                        font-size: 24px;
+                        line-height: 146%;
+                        text-align: center;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,9 +1,10 @@
 import { Metadata } from "next";
 
-import Header from "@/widgets/Header/Header"; // Исправлен импорт: добавлен алиас '@' и убраны лишние кавычки
-import Footer from "@/widgets/Footer/Footer"; // Исправлен импорт: добавлен алиас '@' и убраны лишние кавычки
+import Header from "@/widgets/Header/Header";
+import Footer from "@/widgets/Footer/Footer";
 
 import "./globals.scss";
+import StoreProvider from "./StoreProvider";
 
 export const metadata: Metadata = {
   title: 'Guitar Lavka',
@@ -17,9 +18,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
+      <head>
+        <link rel="icon" href="/assets/images/logo.svg" />
+      </head>
       <body>
         <Header />
-        {children}
+        <main>
+          <StoreProvider>
+            {children}
+          </StoreProvider>
+        </main>
         <Footer />
       </body>
     </html>

@@ -1,0 +1,26 @@
+.likeIt {
+    padding: 0 0 50px;
+    &__content {
+        &__title {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 36px;
+            line-height: 97%;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            margin-bottom: 45px;
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                border: 2px solid #d87700;
+                width: 300px;
+                left: 50%;
+                bottom: -15px;
+                transform: translateX(-50%);
+                height: 0px;
+            }
+        }
+    }
+}

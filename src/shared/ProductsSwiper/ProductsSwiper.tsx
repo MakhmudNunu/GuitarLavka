@@ -17,9 +17,10 @@ import { IProducts } from '@/entities/type/products';
 
 interface IProps {
   products: IProducts[];
+  lr: number
 }
 
-const ProductsSwiper: React.FC<IProps> = ({ products }) => {
+const ProductsSwiper: React.FC<IProps> = ({ products, lr }) => {
   const swiperRef = useRef<any>(null);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
@@ -42,7 +43,7 @@ const ProductsSwiper: React.FC<IProps> = ({ products }) => {
         alt="prev button"
         isBeginning={isBeginning}
         className="swiperPrevEl"
-        left={-15}
+        left={lr}
         top={50}
       />
 
@@ -51,7 +52,7 @@ const ProductsSwiper: React.FC<IProps> = ({ products }) => {
         alt="next button"
         isEnd={isEnd}
         className="swiperNextEl"
-        right={-15}
+        right={lr}
         top={50}
       />
 
@@ -98,9 +99,7 @@ const ProductsSwiper: React.FC<IProps> = ({ products }) => {
             key={item.id}
             className={styles.swiperSlide}
           >
-            <Link href={item.link}>
-              <ProductCard product={item} />
-            </Link>
+            <ProductCard product={item} />
           </SwiperSlide>
         ))}
       </SwiperComponent>

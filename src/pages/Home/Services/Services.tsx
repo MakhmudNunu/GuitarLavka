@@ -15,14 +15,14 @@ const services: IServices[] = [
         title: 'Обучение',
         description: 'This is a description of service 1.',
         image: '/assets/images/learning.webp',
-        path: '/services/learning',
+        path: '/Learning',
     },
     {
         id: 2,
         title: 'Подбор',
         description: 'В нашей гитарной мастерской мы оказываем полный спектр услуг по ремонту и обслуживанию музыкальных инструментов, в том числе и изготовление на заказ. ',
         image: '/assets/images/set.webp',
-        path: '/services/set',
+        path: '/Services/SetItem',
     },
     {
         id: 3,

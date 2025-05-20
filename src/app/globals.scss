@@ -19,6 +19,7 @@ img {
 
 body {
     background: #131218;
+    overflow-x: hidden;
 }
 
 body:focus-visible {
@@ -53,7 +54,6 @@ body.menu-open {
         max-width: 90%;
     }
 }
-
 
 //Custom Pagination
 
