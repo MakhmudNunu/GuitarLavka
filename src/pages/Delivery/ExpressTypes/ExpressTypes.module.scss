@@ -1,0 +1,90 @@
+.expressTypes {
+    padding: 0 0 70px;
+
+    &__container {
+        width: 1000px;
+        margin: 0 auto;
+
+        &__content {
+            h1 {
+                font-family: var(--font-family);
+                font-weight: 400;
+                font-size: 36px;
+                line-height: 97%;
+                text-align: center;
+                color: #fff;
+                position: relative;
+                margin: 21px 0 30px;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 300px;
+                    height: 2px;
+                    position: absolute;
+                    left: 50%;
+                    top: 70%;
+                    transform: translateX(-50%);
+                    background-color: #D87700;
+                    margin-top: 20px;
+                }
+            }
+
+            &__types {
+                display: flex;
+                flex-direction: column;
+                row-gap: 10px;
+
+                &__item {
+                    padding: 20px 40px 53px 25px;
+                    border: 1px solid white;
+                    background: #131218;
+
+                    &:first-of-type {
+                        border-top-right-radius: 30px;
+                        border-top-left-radius: 30px;
+                    }
+
+                    &:last-of-type {
+                        border-bottom-right-radius: 30px;
+                        border-bottom-left-radius: 30px;
+                    }
+
+                    h2 {
+                        font-family: var(--font-family);
+                        font-weight: 400;
+                        font-size: 24px;
+                        line-height: 146%;
+                        color: #fff;
+
+                    }
+
+                    &__content {
+                        display: grid;
+                        grid-template-columns: 0.5fr 0.5fr 1fr;
+                        column-gap: 50px;
+
+                        h3 {
+                            font-family: var(--font-family);
+                            font-weight: 400;
+                            font-size: 18px;
+                            color: #c4c4c4;
+                            margin-bottom: 12px;
+                        }
+
+                        p {
+                            font-family: var(--font-family);
+                            font-weight: 400;
+                            font-size: 14px;
+                            line-height: 143%;
+                            color: rgba(255, 255, 255, 0.6);
+
+                        }
+                    }
+
+
+                }
+            }
+        }
+    }
+}

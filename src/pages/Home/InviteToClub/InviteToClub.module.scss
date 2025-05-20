@@ -22,12 +22,14 @@
     }
 }
 
-// @media (max-width: 1050px) {
-//     .inviteToClub {
-//         &__container {
-//             &__content {
-//                 width: 800px;
-//             }
-//         }
-//     }
-// }
+@media (max-width: 500px) {
+    .inviteToClub {
+        &__container {
+            &__content {
+                &::after {
+                    background: rgba(216, 119, 0, 1);
+                }
+            }
+        }
+    }
+}

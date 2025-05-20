@@ -1,0 +1,92 @@
+.check {
+    display: flex;
+    flex-direction: column;
+
+    &__box {
+        padding: 25px 25px 38px 27px;
+        box-shadow: 0 4px 15px 1px rgba(255, 255, 255, 0.24);
+        background: #131218;
+        border-radius: 15px;
+
+        h3 {
+            border-bottom: 2px solid #ea8305;
+            padding: 0 0 5px;
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            margin-bottom: 36px;
+        }
+
+        div {
+            display: flex;
+            align-items: flex-end;
+
+            h4 {
+                width: 220px;
+            }
+
+            h4,
+            h5 {
+                font-family: var(--font-family);
+                font-weight: 400;
+                font-size: 14px;
+                color: rgba(255, 255, 255, 0.6);
+            }
+
+            &:first-of-type {
+                margin-bottom: 22px;
+            }
+        }
+    }
+
+    label {
+        width: 352px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid rgba(255, 255, 255, 0.13);
+        border-radius: 5px;
+        margin: 21px 0 6px;
+
+        input {
+            background: none;
+            border: none;
+            outline: none;
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.13);
+        }
+    }
+
+    button {
+        width: 352px;
+        height: 40px;
+        border: 2px solid rgba(255, 255, 255, 0.13);
+        border-radius: 5px;
+        background: #ea8305;
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 14px;
+        text-align: center;
+        color: #fff;
+    }
+
+    &__reload {
+        display: flex;
+        align-items: center;
+        column-gap: 6px;
+        margin-top: 5px;
+        h3 {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.13);
+            position: relative;
+            top: 2px;
+        }
+    }
+}

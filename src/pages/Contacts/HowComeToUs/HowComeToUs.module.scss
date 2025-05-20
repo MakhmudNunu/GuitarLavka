@@ -1,0 +1,101 @@
+.howComeToUs {
+    padding: 86px 0 115px;
+
+    &__container {
+        width: 979px;
+        margin: 0 auto;
+
+        &__content {
+            display: flex;
+            justify-content: space-between;
+            column-gap: 25px;
+
+            &__left {
+                .top {
+                    h2 {
+                        font-family: var(--font-family);
+                        font-weight: 400;
+                        font-size: 36px;
+                        line-height: 97%;
+                        color: #fff;
+                        position: relative;
+                        &::after {
+                            content: "";
+                            display: block;
+                            border: 2px solid #d87700;
+                            width: 85%;
+                            height: 0px;
+                            position: absolute;
+                            bottom: -10px;
+                            left: 50%;
+                            transform: translateX(-58%);
+                        }
+                    }
+
+                    .metro {
+                        display: flex;
+                        align-items: center;
+                        margin: 35px 0 10px;
+
+                        h3 {
+                            font-family: var(--font-family);
+                            font-weight: 400;
+                            font-size: 14px;
+                            color: #fff;
+                        }
+                    }
+
+
+
+                    p {
+                        font-family: var(--font-family);
+                        font-weight: 400;
+                        font-size: 14px;
+                        color: rgba(255, 255, 255, 0.6);
+
+                    }
+                }
+
+                .center {
+                    margin: 31px 0 29px;
+                }
+
+                .center,
+                .bottom {
+                    h3 {
+                        font-family: var(--font5);
+                        font-weight: 700;
+                        font-size: 14px;
+                        color: #fff;
+                    }
+
+                    p {
+                        font-family: var(--font-family);
+                        font-style: italic;
+                        font-weight: 400;
+                        color: rgba(255, 255, 255, 0.6);
+                    }
+
+                }
+
+
+            }
+
+            &__right {
+                &__items {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-row: repeat(2, 1fr);
+                    row-gap: 8.72px;
+                    column-gap: 7.97px;
+
+                    &__item {
+                        width: 259px;
+                        height: 252px;
+
+                    }
+                }
+            }
+        }
+    }
+}

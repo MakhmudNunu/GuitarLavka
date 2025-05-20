@@ -1,0 +1,92 @@
+.howToContactWithUs {
+    border-bottom: 1px solid #242424;
+    &__container {
+        width: 979px;
+        margin: 0 auto;
+
+        &__content {
+            &__top {
+                padding: 43px 0 ;
+                h2 {
+                    font-family: var(--font-family);
+                    font-weight: 400;
+                    font-size: 36px;
+                    line-height: 97%;
+                    color: #fff;
+                    margin-bottom: 20px;
+                }
+
+                p {
+                    font-family: var(--font-family);
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 143%;
+                    color: rgba(255, 255, 255, 0.6);
+                }
+            }
+
+            &__bottom {
+                display: flex;
+                column-gap: 58px;
+
+                &__right {
+                    display: grid;
+                    grid-template-rows: repeat(3, 1fr);
+                    grid-template-columns: 155px 1fr;
+                    row-gap: 25px;
+                    column-gap: 54px;
+
+                    &__item {
+                        display: flex;
+                        flex-direction: column;
+
+                        h3 {
+                            font-family: var(--font5);
+                            font-weight: 700;
+                            font-size: 18px;
+                            line-height: 139%;
+                            color: #fff;
+                        }
+
+                        a {
+                            font-family: var(--font-family);
+                            font-style: italic;
+                            font-weight: 400;
+                            font-size: 14px;
+                            color: #fff;
+                            text-decoration: underline;
+                        }
+
+                        p {
+                            font-family: var(--font-family);
+                            font-weight: 400;
+                            font-size: 14px;
+                            line-height: 143%;
+                            color: rgba(255, 255, 255, 0.6);
+                        }
+
+                        .callTypes {
+                            display: flex;
+                            column-gap: 5px;
+                            margin-top: 14px;
+                        }
+
+                        &__title {
+                            display: flex;
+                            align-items: center;
+                            position: relative;
+                            margin-bottom: 5px;
+
+                            &>div {
+                                position: absolute;
+                                left: -26px;
+                                top: 50%;
+                                transform: translateY(-50%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,53 @@
+.howComeToUs {
+    padding: 90px 0 47px;
+    &__container {
+        width: 1042px;
+        margin: 0 auto;
+
+        &__content {
+            box-shadow: -5px 5px 20px rgba(255, 255, 255, 0.13);
+            padding: 41px 37px 45px 40px;
+
+            h2 {
+                font-family: var(--font5);
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 104%;
+                color: #fff;
+            }
+
+            &__main {
+                display: flex;
+                margin-top: 41px;
+                justify-content: space-between;
+
+                &__left,
+                &__center,
+                &__right {
+                    h3 {
+                        font-family: var(--font-family);
+                        font-weight: 400;
+                        font-size: 18px;
+                        line-height: 139%;
+                        color: #fff;
+                        margin-bottom: 7px;
+                    }
+
+                    p {
+                        font-family: var(--font-family);
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 143%;
+                        color: rgba(255, 255, 255, 0.6);
+                    }
+                }
+
+                &__left {
+                    &__top {
+                        margin: 9px 0 45px;
+                    }
+                }
+            }
+        }
+    }
+}

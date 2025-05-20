@@ -1,0 +1,52 @@
+.card {
+    border-radius: 28px 28px 0 0;
+    background: #3B3A40;
+    width: 220px;
+
+    &__image {
+        border-radius: 28px 28px 28px 0;
+    }
+
+    &__info {
+        padding: 8px 13px 20px;
+        display: grid;
+        grid-template-rows: 10px 30px 10px 20px;
+
+        h3 {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 65%;
+            color: #fff;
+        }
+
+        h2 {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 146%;
+            color: #fff;
+
+        }
+
+        h4 {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 194%;
+            color: #fff;
+            position: relative;
+            grid-row: 4;
+        }
+    }
+}
+
+// @media (max-width: 768px) {
+//     .card {
+
+//         &__info {
+//             grid-template-rows: 65px 15px 40px;
+
+//         }
+//     }
+// }

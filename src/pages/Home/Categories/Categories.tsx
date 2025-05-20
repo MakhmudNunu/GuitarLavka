@@ -7,25 +7,25 @@ let categories = [
         id: 1,
         name: 'Гитары',
         icon: '/assets/images/guitars.webp',
-        path: '/guitars'
+        path: '/Catalog'
     },
     {
         id: 2,
         name: 'Укулеле',
         icon: '/assets/images/ukulele.webp',
-        path: '/ukuleles'
+        path: '/Catalog'
     },
     {
         id: 3,
         name: 'Аксессуары',
         icon: '/assets/images/accessories.webp',
-        path: '/accessories'
+        path: '/Catalog'
     },
     {
         id: 4,
         name: 'Струны',
         icon: '/assets/images/strings.webp',
-        path: '/strings'
+        path: '/Catalog'
     },
 ]
 

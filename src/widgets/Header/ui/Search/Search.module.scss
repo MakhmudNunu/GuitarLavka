@@ -9,13 +9,16 @@
     margin-right: 13px;
     z-index: 100;
 
-    @media (max-width: 768px) {
-        margin-right: 5px;
-        order: 2;
-
+    @media (max-width: 1010px) {
+        margin-left: auto;
         h4 {
             display: none;
         }
+    }
+
+    @media (max-width: 768px) {
+        margin-right: 5px;
+        order: 2;
     }
 
 
@@ -50,8 +53,7 @@
         padding-left: 12px;
         opacity: 0.6;
         margin-right: 25px;
-        flex: 0.9;
-
+        flex: 1;
         input {
             display: block;
             color: rgb(255, 255, 255);

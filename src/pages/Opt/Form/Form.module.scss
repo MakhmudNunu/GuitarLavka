@@ -1,0 +1,90 @@
+.form {
+    padding: 0 0 80px;
+    &__container {
+        width: 928px;
+        margin: 0 auto;
+
+        &__content {
+            h2 {
+                font-family: var(--font-family);
+                font-weight: 400;
+                font-size: 18px;
+                color: #fff;
+            }
+
+            &__main {
+                display: flex;
+                column-gap: 13px;
+                margin-top: 9px;
+
+                &__left {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 9px;
+
+                    input {
+                        color: black;
+                        background: transparent;
+                        border: 1px solid rgba(255, 255, 255, 0.6);
+                        border-radius: 5px;
+                        padding: 13px 0 13px 39px;
+                        font-family: var(--font-family);
+                        font-weight: 400;
+                        font-size: 14px;
+                        color: rgba(255, 255, 255, 0.6);
+
+                        &:focus {
+                            background: rgba(13, 37, 255, 0.6);
+                            outline: none;
+                        }
+                    }
+                }
+
+                &__right {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 9px;
+
+                    textarea {
+                        background: transparent;
+                        border: 1px solid rgba(255, 255, 255, 0.6);
+                        border-radius: 5px;
+                        padding: 15px 0 5px 13px;
+
+                        &:focus {
+                            background: rgba(13, 37, 255, 0.6);
+                            outline: none;
+                        }
+                    }
+
+                    button {
+                        background: transparent;
+                        border: 1px solid rgba(255, 255, 255, 0.6);
+                        border-radius: 5px;
+                        padding: 13.5px 111px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    &__send {
+                        display: flex;
+                        column-gap: 11px;
+
+                        span {
+                            font-family: var(--font-family);
+                            font-style: italic;
+                            font-weight: 400;
+                            font-size: 14px;
+                            line-height: 143%;
+                            color: rgba(196, 196, 196, 0.6);
+                            text-decoration: underline;
+                            align-content: flex-end;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}

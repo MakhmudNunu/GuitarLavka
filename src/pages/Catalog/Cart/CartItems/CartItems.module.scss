@@ -1,0 +1,18 @@
+.cartItems {
+    max-width: 70%;
+
+    &__titles {
+        display: flex;
+        margin-bottom: 5px;
+        h3 {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.13);
+            &:nth-child(2) {
+                margin: 0 38px 0 340px;
+
+            }
+        }
+    }
+}

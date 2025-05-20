@@ -1,0 +1,84 @@
+.aboutOurSocial {
+    // padding: 45px 0 75px;
+    padding: 45px 0 100px;
+    &__container {
+        width: 802px;
+        margin: 0 auto;
+
+        &__content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            height: 369px;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 160%;
+                height: 725px;
+                left: -70%;
+                top: 50%;
+                transform: translateY(-50%);
+                border-top-right-radius: 386.5px;
+                border-bottom-right-radius: 386.5px;
+                background: rgba(216, 119, 0, 0.6);
+                z-index: -1;
+            }
+
+            &__left {
+
+                h2 {
+                    font-family: var(--font-family);
+                    font-weight: 400;
+                    font-size: 36px;
+                    line-height: 97%;
+                    color: #fff;
+                }
+
+                p {
+                    font-family: var(--font-family);
+                    font-style: italic;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 179%;
+                    color: rgba(255, 255, 255, 0.6);
+                    margin: 16px 0 32px 0;
+                }
+
+                &__social {
+                    display: flex;
+                    column-gap: 18px;
+                }
+            }
+
+            &__right {
+                padding: 0 0 0 48px;
+                height: inherit;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                border-left: 1px solid #fff;
+
+                h3 {
+                    font-family: var(--font-family);
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 139%;
+                    color: #fff;
+                }
+
+                p {
+                    font-family: var(--font-family);
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 143%;
+                    color: rgba(255, 255, 255, 0.6);
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+}

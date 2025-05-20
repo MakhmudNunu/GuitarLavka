@@ -1,0 +1,49 @@
+.aside {
+    width: 232px;
+
+    &__typeList {
+        display: flex;
+        flex-direction: column;
+        row-gap: 17px;
+
+        &__type {
+            &__title {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                cursor: pointer;
+                span {
+                    font-family: var(--font-family);
+                    font-weight: 400;
+                    font-size: 14px;
+                    color: #fff;
+                    text-transform: uppercase;
+                }
+
+                .arrow {
+                    background: url('/assets/images/arrows/arrow.svg');
+                    width: 12px;
+                    height: 19px;
+                    transition: transform 0.3s ease;
+                }
+
+                .arrowOpen {
+                    transform: rotate(90deg);
+                }
+
+            }
+
+            &__dropdown {
+                transition: 0.3s;
+                li {
+                    font-family: var(--font-family);
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 214%;
+                    color: #c4c4c4;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+.otherPoV {
+    padding: 0 0 50px ;
+    &__container {
+        width: 950px;
+        margin: 0 auto;
+
+        &__content {
+            h2 {
+                text-align: center;
+                margin-bottom: 50px;
+                font-family: var(--font-family);
+                font-weight: 400;
+                font-size: 36px;
+                line-height: 97%;
+                color: #fff;
+                position: relative;
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 300px;
+                    height: 2px;
+                    position: absolute;
+                    left: 50%;
+                    top: 70%;
+                    transform: translateX(-50%);
+                    background-color: #D87700;
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}

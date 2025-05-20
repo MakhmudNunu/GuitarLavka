@@ -1,0 +1,26 @@
+.weAre {
+    padding: 44px 0 65px;
+    &__container {
+        width: 928px;
+        margin: 0 auto;
+
+        &__content {
+            h1 {
+                font-family: var(--font-family);
+                font-weight: 400;
+                font-size: 36px;
+                line-height: 97%;
+                color: #fff;
+                margin-bottom: 20px;
+            }
+
+            p {
+                font-family: var(--font-family);
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 143%;
+                color: rgba(255, 255, 255, 0.6);
+            }
+        }
+    }
+}
