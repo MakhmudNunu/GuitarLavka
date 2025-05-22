@@ -24,6 +24,10 @@ const CartItemCard: React.FC<CartProductProps> = ({ product }) => {
         }
     }
 
+    const handleDeleteFromCart = () => {
+        dispatch(deleteFromCart(product.id))
+    }
+
     return (
         <div className={styles.card}>
             <div className={styles.card__left}>
@@ -53,12 +57,20 @@ const CartItemCard: React.FC<CartProductProps> = ({ product }) => {
                 </div>
             </div>
             <div className={styles.card__center}>
-                <button onClick={handleCountMinus}>
-                    <Image src={'/assets/images/minus.svg'} width={20} height={20} alt='minus' />
-                </button>
-                <h3>{product.quantity}</h3>
-                <button onClick={handleCountPlus}>
-                    <Image src={'/assets/images/plus.svg'} width={20} height={20} alt='plus' />
+                <div className={styles.card__center__count}>
+                    <button onClick={handleCountMinus}>
+                        <Image src={'/assets/images/minus.svg'} width={20} height={20} alt='minus' />
+                    </button>
+                    <h3>{product.quantity}</h3>
+                    <button onClick={handleCountPlus}>
+                        <Image src={'/assets/images/plus.svg'} width={20} height={20} alt='plus' />
+                    </button>
+                </div>
+                <button
+                    className={styles.card__center__delete}
+                    onClick={handleDeleteFromCart}
+                >
+                    удалить
                 </button>
             </div>
             {

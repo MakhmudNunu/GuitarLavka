@@ -24,6 +24,23 @@ export const fetchFavorites = createAsyncThunk(
     }
 )
 
+export const addToFavorites = createAsyncThunk(
+    'favorites/addToFavorites',
+    async (product: IProducts) => {
+        const response = await axios.post(API_URL, product)
+        return response.data
+
+    }
+)
+
+export const deleteFromFavorites = createAsyncThunk(
+    'favorites/deleteFromFavorites',
+    async (id: number) => {
+        const response = await axios.delete(`${API_URL}/${id}`)
+        return response.data
+    }
+)
+
 const FavoritesSlice = createSlice({
     name: "favorites",
     initialState,
@@ -41,6 +58,15 @@ const FavoritesSlice = createSlice({
             })
             .addCase(fetchFavorites.rejected, (state) => {
                 state.status = 'error'
+            })
+
+
+            .addCase(addToFavorites.fulfilled, (state, action) => {
+                state.favorites.push(action.payload)
+            })
+
+            .addCase(deleteFromFavorites.fulfilled, (state, action) => {
+                state.favorites = state.favorites.filter(item => item.id !== action.payload)
             })
     }
 });

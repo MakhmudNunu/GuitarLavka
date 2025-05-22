@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import styles from './Top.module.scss';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
-import { fetchProducts, toggleViewType } from '@/lib/features/productsSlice';
+import { fetchProducts, setViewBy, sortBy, toggleViewType } from '@/lib/features/productsSlice';
 import { setInStock } from '@/lib/features/filtersSlice';
 
 const Top = () => {
@@ -12,14 +12,11 @@ const Top = () => {
 
     const viewType = useAppSelector(state => state.products.viewType)
 
-    // const [products, setProducts] = useState<IProducts[]>([]);
     // const [isOpenFilter, setIsOpenFilter] = useState(false);
-    // const [isChecked, setIsChecked] = useState<boolean>(false);
     const [sortType, setSortType] = useState('По умолчанию ...');
     const [isCount, setIsCount] = useState('12');
     const [isOpenSort, setIsOpenSort] = useState(false);
     const [isOpenCount, setIsOpenCount] = useState(false);
-    // const [viewType, setviewType] = useState('Net');
 
     const sortRef = useRef<HTMLUListElement>(null);
     const countRef = useRef<HTMLUListElement>(null);
@@ -54,23 +51,20 @@ const Top = () => {
         setSortType(type);
         setIsOpenSort(false);
 
-        // const sortedProducts = [...products];
-        // if (type === 'По названию') {
-        //     sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
-        // } else if (type === 'По цене') {
-        //     sortedProducts.sort((a, b) => a.price - b.price);
-        // } else if (type === 'По дате') {
-        //     sortedProducts.sort((a, b) =>
-        //         new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-        //     );
-        // }
+        let sortValue = 'default';
+        if (type === 'По названию') sortValue = 'title';
+        else if (type === 'По цене (увеличение)') sortValue = 'price-asc';
+        else if (type === 'По цене (убывание)') sortValue = 'price-desc';
+        else if (type === 'По умолчанию ...') sortValue = 'default';
 
-        // setProducts(sortedProducts);
+        dispatch(sortBy(sortValue));
     };
 
     const handleCount = (type: string) => {
         setIsCount(type);
         setIsOpenCount(false);
+        // window.location.reload()
+        dispatch(setViewBy(type))
     };
 
     const handleViewType = () => {
@@ -107,8 +101,9 @@ const Top = () => {
                         style={{ display: isOpenSort ? 'flex' : 'none' }}
                     >
                         <li onClick={() => handleSort('По названию')}>По названию</li>
-                        <li onClick={() => handleSort('По цене')}>По цене</li>
-                        <li onClick={() => handleSort('По дате')}>По дате</li>
+                        <li onClick={() => handleSort('По цене (увеличение)')}>По цене (увел.)</li>
+                        <li onClick={() => handleSort('По цене (убывание)')}>По цене (убыв.)</li>
+                        <li onClick={() => handleSort('По умолчанию ...')}>По умолчанию ...</li>
                     </ul>
                 </div>
 

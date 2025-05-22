@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import ProductCard from './ProductCard/ProductCard';
 import styles from './CatalogPagination.module.scss';
 import { IProducts } from '@/entities/type/products';
-import Image from 'next/image';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 import ListProductCard from './ListProductCard/ListProductCard';
 
@@ -10,8 +9,8 @@ import ListProductCard from './ListProductCard/ListProductCard';
 const CatalogPagination: React.FC<{ products: IProducts[] }> = ({ products }) => {
 
   const dispatch = useAppDispatch()
-  const { viewType } = useAppSelector((state) => state.products)
-  const itemsPerPage = viewType === 'List' ? 3 : 12;
+  const { viewType, viewBy } = useAppSelector((state) => state.products)
+  const itemsPerPage = viewType === 'List' ? 3 : Number(viewBy);
 
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(products.length / itemsPerPage);

@@ -8,9 +8,22 @@ const initialState = {
     cart: [] as ICartProduct[],
     status: 'idle',
     finallyPrice: 0,
-    finallyCount: 0
+    finallyCount: 0,
+    countForCartIcon: 0
 };
 
+// Функция для пересчёта общей суммы и количества
+function recalculateTotals(state: typeof initialState) {
+    state.finallyPrice = state.cart.reduce((acc, item) => {
+        const discount = item.discount ?? 0;
+        const discountedPrice = item.price * (1 - discount / 100);
+        return acc + discountedPrice * item.quantity;
+    }, 0);
+    state.finallyCount = state.cart.reduce((acc, item) => acc + item.quantity, 0);
+    state.countForCartIcon = state.cart.length
+}
+
+// Получение корзины
 export const fetchCart = createAsyncThunk(
     'cart/fetchCart',
     async () => {
@@ -19,11 +32,12 @@ export const fetchCart = createAsyncThunk(
     }
 );
 
+// Добавление товара в корзину
 export const addToCart = createAsyncThunk(
     'cart/addToCart',
     async (product: ICartProduct, { getState }) => {
         const state = getState() as any;
-        const cart = state.cart.cart as Array<any>;
+        const cart = state.cart.cart as Array<ICartProduct>;
 
         const existingItem = cart.find(item => item.id === product.id);
 
@@ -39,21 +53,23 @@ export const addToCart = createAsyncThunk(
     }
 );
 
+// Удаление товара из корзины
 export const deleteFromCart = createAsyncThunk(
     'cart/deleteFromCart',
     async (id: number) => {
-        await axios.delete(`${API_URL}/${id}`)
-        return id
+        await axios.delete(`${API_URL}/${id}`);
+        return id;
     }
-)
+);
 
+// Изменение количества товара
 export const countUpdate = createAsyncThunk(
     'cart/countUpdate',
-    async ({ id, quantity }: { id: number, quantity: number}) => {
-        const response = await axios.patch(`${API_URL}/${id}`, { quantity })
-        return response.data
+    async ({ id, quantity }: { id: number, quantity: number }) => {
+        const response = await axios.patch(`${API_URL}/${id}`, { quantity });
+        return response.data;
     }
-)
+);
 
 const cartSlice = createSlice({
     name: 'cart',
@@ -61,42 +77,43 @@ const cartSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder
-            //Получение корзины
+            // Получение корзины
             .addCase(fetchCart.pending, (state) => {
                 state.status = 'loading';
             })
             .addCase(fetchCart.fulfilled, (state, action) => {
                 state.status = 'success';
                 state.cart = action.payload;
-                state.finallyPrice = state.cart.reduce((acc: number, item: ICartProduct) => {
-                    const price = item.price;
-                    const discount = item.discount ?? 0;
-                    const discountedPrice = price * (1 - discount / 100);
-                    return acc + discountedPrice;
-                }, 0);
-                state.finallyCount = state.cart.length;
+                recalculateTotals(state);
             })
             .addCase(fetchCart.rejected, (state) => {
                 state.status = 'error';
             })
 
-            //Добавление товара в корзину
+            // Добавление в корзину
             .addCase(addToCart.fulfilled, (state, action) => {
-                state.cart.push(action.payload);
+                const index = state.cart.findIndex(item => item.id === action.payload.id);
+                if (index !== -1) {
+                    state.cart[index] = action.payload;
+                } else {
+                    state.cart.push(action.payload);
+                }
+                recalculateTotals(state);
             })
 
-            //Удаляем из корзины
-
+            // Удаление из корзины
             .addCase(deleteFromCart.fulfilled, (state, action) => {
-                state.cart = state.cart.filter(item => item.id !== action.payload)
+                state.cart = state.cart.filter(item => item.id !== action.payload);
+                recalculateTotals(state);
             })
 
-
+            // Изменение количества
             .addCase(countUpdate.fulfilled, (state, action) => {
                 const index = state.cart.findIndex(item => item.id === action.payload.id);
                 if (index !== -1) {
                     state.cart[index].quantity = action.payload.quantity;
                 }
+                recalculateTotals(state);
             });
     }
 });

@@ -3,9 +3,9 @@
 import { useAppDispatch, useAppSelector } from '@/lib/hooks'
 import styles from './CartItems.module.scss'
 import CartItemCard from './CartItemCard/CartItemCard'
-import { IProducts } from '@/entities/type/products'
 import { fetchCart } from '@/lib/features/cartSlice'
 import { useEffect } from 'react'
+import { ICartProduct } from '@/entities/type/products'
 
 const CartItems = () => {
 
@@ -28,7 +28,7 @@ const CartItems = () => {
                 {
                     status === 'loading' ? <h2>Загрузка корзины</h2> :
                         status === 'error' ? <h2>Ошибка загрузки корзины</h2> :
-                            cart.map((item: IProducts, index: number) => {
+                            cart.map((item: ICartProduct, index: number) => {
                                 return (
                                     <CartItemCard product={item} key={index} />
                                 )

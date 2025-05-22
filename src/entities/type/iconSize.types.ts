@@ -1,4 +1,5 @@
 export interface IIconSize {
     width: number;
     height: number;
+    backgroundColor?: string
 }

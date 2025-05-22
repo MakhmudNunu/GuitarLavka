@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Star from '@/shared/ui/Star'
 import Link from 'next/link'
+import { addToCart, fetchCart } from '@/lib/features/cartSlice'
 
 const ProductView = () => {
 
@@ -16,6 +17,7 @@ const ProductView = () => {
 
     const dispatch = useAppDispatch()
     const { product } = useAppSelector((state) => state.products)
+    const { cart } = useAppSelector((state) => state.cart)
 
     const location = usePathname()
     let id = location?.split('/').pop()
@@ -32,9 +34,25 @@ const ProductView = () => {
         setIsPlaying(!isPlaying)
     }
 
+    const addedToCart = cart?.find(item => item.id === idLocate)
+
+
+    const handleAddToCart = () => {
+        if (!product || typeof product.id !== 'number') return;
+
+        const productToAdd = {
+            ...product,
+            id: product.id,
+            quantity: 1,
+        };
+
+        dispatch(addToCart(productToAdd));
+    };
+
     useEffect(() => {
         if (id) {
             dispatch(fetchOneProduct(id))
+            dispatch(fetchCart())
         }
         console.log(id)
     }, [id, dispatch])
@@ -101,7 +119,22 @@ const ProductView = () => {
                                     <div className={styles.productView__content__right__bottom__top__left}>
                                         <h3>₽{product.price}</h3>
                                         <h4>В рассрочку от {product.price / 10} ₽</h4>
-                                        <button>В КОРЗИНУ</button>
+                                        {
+                                            addedToCart ? (
+                                                <button
+                                                    className={styles.added}
+                                                >
+                                                    ДОБАВЛЕНО
+                                                </button>
+                                            ) : (
+                                                <button
+                                                    className={styles.addToCart}
+                                                    onClick={handleAddToCart}
+                                                >
+                                                    В КОРЗИНУ
+                                                </button>
+                                            )
+                                        }
                                     </div>
                                     <div className={styles.productView__content__right__bottom__top__right}>
                                         <div className={styles.productView__content__right__bottom__top__right__stars}>
