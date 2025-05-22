@@ -41,23 +41,42 @@
     }
 
     &__center {
+        width: 100px;
         display: flex;
         align-items: center;
-        width: 100px;
-        column-gap: 5px;
+        flex-direction: column;
+        row-gap: 5px;
 
-        button {
-            background: none;
-            border: none;
-            position: relative;
-            bottom: -2px;
+        &__count {
+            display: flex;
+            align-items: center;
+            column-gap: 5px;
+
+            button {
+                background: none;
+                border: none;
+                position: relative;
+                bottom: -2px;
+            }
+
+            h3 {
+                font-family: var(--font-family);
+                font-weight: 400;
+                font-size: 18px;
+                color: #fff;
+            }
         }
 
-        h3 {
-            font-family: var(--font-family);
+        &__delete {
+            background: none;
+            border: none;
+            font-family: var(--second-family);
             font-weight: 400;
-            font-size: 18px;
-            color: #fff;
+            font-size: 14px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: underline;
+            cursor: pointer;
         }
     }
 

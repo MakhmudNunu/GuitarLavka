@@ -15,6 +15,7 @@ export interface IProducts {
     delivery: string
     payment: string
     quantity?: number
+    category: string
 }
 
 export interface ICartProduct extends IProducts {

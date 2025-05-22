@@ -5,8 +5,9 @@ import Star from '@/shared/ui/Star';
 import FavIcon from '@/widgets/Header/ui/FavCart/ui/Favorite/FavIcon';
 import Link from 'next/link';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
-import { addToCart, fetchCart } from '@/lib/features/cartSlice';
+import { addToCart, deleteFromCart, fetchCart } from '@/lib/features/cartSlice';
 import { useEffect } from 'react';
+import { addToFavorites, deleteFromFavorites, fetchFavorites } from '@/lib/features/favoriteSlice';
 
 interface IProps {
     product: IProducts;
@@ -17,16 +18,31 @@ const ListProductCard: React.FC<IProps> = ({ product }) => {
     const dispatch = useAppDispatch()
 
     const { cart } = useAppSelector((state) => state.cart)
+    const { favorites } = useAppSelector((state) => state.favorites)
 
     useEffect(() => {
         dispatch(fetchCart())
     }, [dispatch])
 
     const addedToCart = cart.find(item => item.id === product.id)
+    const addedToFavorites = favorites.find(item => item.id === product.id)
 
     const handleAddToCart = () => {
         const productToAdd = { ...product, quantity: 1 };
         dispatch(addToCart(productToAdd));
+    }
+
+    const handleDeleteFromCart = () => {
+        dispatch(deleteFromCart(product.id))
+    }
+
+    const handleAddToFavorites = () => {
+        dispatch(addToFavorites(product))
+    }
+
+    const handleDeleteFromFavorites = async () => {
+        await dispatch(deleteFromFavorites(product.id))
+        dispatch(fetchFavorites())
     }
 
     return (
@@ -86,20 +102,46 @@ const ListProductCard: React.FC<IProps> = ({ product }) => {
                             </div>
                         </div>
                         <div className={styles.card__info__top__right}>
-                            <button className={styles.card__info__top__right__addToFavorite}>
-                                <FavIcon width={20} height={22} />
+                            <button
+                                className={styles.card__info__top__right__addToFavorite}
+                                onClick={addedToFavorites ? handleDeleteFromFavorites : handleAddToFavorites}
+                            >
+                                {
+                                    addedToFavorites ? (
+                                        <Image
+                                            src={'/assets/images/favoritesIconFilled.svg'}
+                                            width={20}
+                                            height={22}
+                                            alt='favorite icon'
+                                        />
+                                    ) : (
+                                        <Image
+                                            src={'/assets/images/favorite.svg'}
+                                            width={20}
+                                            height={22}
+                                            alt='favorite icon'
+                                        />
+                                    )
+                                }
                             </button>
                             <div className={styles.card__info__top__right__addTo}>
                                 {
                                     addedToCart ? (
-                                        <button
-                                            className={styles.card__info__top__right__addTo__added}
-                                        >
-                                            <Link href={'/Catalog/Cart'}>
-                                                ПЕРЕЙТИ В КОРЗИНУ
-                                            </Link>
-                                        </button>
-
+                                        <div className={styles.card__info__top__right__addTo__addedBox}>
+                                            <button
+                                                className={styles.card__info__top__right__addTo__addedBox__added}
+                                            >
+                                                <Link href={'/Catalog/Cart'}>
+                                                    ПЕРЕЙТИ В КОРЗИНУ
+                                                </Link>
+                                            </button>
+                                            <button
+                                                className={styles.card__info__top__right__addTo__addedBox__delete}
+                                                onClick={handleDeleteFromCart}
+                                            >
+                                                удалить из корзины
+                                            </button>
+                                        </div>
                                     ) : (
                                         <button
                                             className={styles.card__info__top__right__addTo__cart}

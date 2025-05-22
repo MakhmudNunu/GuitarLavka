@@ -5,6 +5,7 @@ import styles from './CartCheck.module.scss'
 import { useAppDispatch, useAppSelector } from '@/lib/hooks'
 import { useEffect } from 'react'
 import { fetchCart } from '@/lib/features/cartSlice'
+import Link from 'next/link'
 
 const CartCheck = () => {
 
@@ -25,10 +26,12 @@ const CartCheck = () => {
             </div>
             <label><input type="text" placeholder='Укажите промо-код' /></label>
             <button>Перейти к оформлению </button>
-            <div className={styles.check__reload}>
-                <Image src={'/assets/images/reload.svg'} width={25} height={25} alt='reload' />
-                <h3>Продолжить покупки</h3>
-            </div>
+            <Link href={'/Catalog'}>
+                <div className={styles.check__reload}>
+                    <Image src={'/assets/images/reload.svg'} width={25} height={25} alt='reload' />
+                    <h3>Продолжить покупки</h3>
+                </div>
+            </Link>
         </div>
     )
 }

@@ -6,25 +6,18 @@ import axios from 'axios'
 import styles from './Read.module.scss'
 import Image from 'next/image';
 import { getDaysAgo } from '@/shared/lib/get/getDays';
-
-type Feedback = {
-    id: number
-    name: string
-    image?: string
-    feedback: string
-    createdAd: string
-}
+import { useAppDispatch, useAppSelector } from '@/lib/hooks';
+import { fetchFeedbacks } from '@/lib/features/formSlice';
+import Star from '@/shared/ui/Star';
 
 const Read = () => {
 
-    const [feedbacks, setFeedbacks] = useState<Feedback[]>([])
-
+    const dispatch = useAppDispatch()
     useEffect(() => {
-        let response = axios.get('http://localhost:5000/feedbacks')
-        response.then((res) => {
-            setFeedbacks(res.data)
-        })
-    }, [])
+        dispatch(fetchFeedbacks())
+    }, [dispatch])
+    const { feedbacks } = useAppSelector((state) => state.forms)
+
     return (
         <div className={styles.read}>
             <div className={styles.read__items}>
@@ -49,10 +42,16 @@ const Read = () => {
                             <div className={styles.read__items__item__main}>
                                 <div className={styles.read__items__item__main__header}>
                                     <h3>{item.name}</h3>
-
+                                    <div className={styles.read__items__item__main__header__stars}>
+                                        {typeof item.rate === 'number' &&
+                                            Array.from({ length: item.rate }, (_, i) => (
+                                                <Star key={i} />
+                                            ))
+                                        }
+                                    </div>
                                 </div>
                                 <p>{item.feedback}</p>
-                                <span>{getDaysAgo(item.createdAd)}</span>
+                                <span>{getDaysAgo(item.createdAt)}</span>
                             </div>
                         </div>
                     )

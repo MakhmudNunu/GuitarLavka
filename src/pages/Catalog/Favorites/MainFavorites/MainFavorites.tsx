@@ -23,11 +23,13 @@ const MainFavorites = () => {
                     <div className={styles.mainFavorites__content__items}>
                         <div className={styles.mainFavorites__content__items__item}>
                             {
-                                favorites.map((product, index) => {
-                                    return (
-                                        <FavoritesCard key={index} product={product} />
-                                    )
-                                })
+                                Array.isArray(favorites) && favorites.length > 0 ? (
+                                    favorites.map((product, index) => (
+                                        <FavoritesCard key={product.id} product={product} />
+                                    ))
+                                ) : (
+                                    <p>Нет избранных товаров</p>
+                                )
                             }
                         </div>
                     </div>

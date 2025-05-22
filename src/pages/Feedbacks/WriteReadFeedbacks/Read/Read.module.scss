@@ -14,11 +14,15 @@
             &__main {
                 &__header {
                     margin: 0 0 5px 13px;
+                    display: flex;
+                    align-items: center;
+                    column-gap: 10px;
                     h3 {
                         font-family: var(--font-family);
                         font-weight: 400;
                         font-size: 18px;
                         color: #fff;
+                        min-width: 100px;
                     }
                 }
 
