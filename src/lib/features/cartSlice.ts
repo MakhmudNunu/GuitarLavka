@@ -13,7 +13,7 @@ const initialState = {
 };
 
 // Функция для пересчёта общей суммы и количества
-function recalculateTotals(state: typeof initialState) {
+const recalculateTotals = (state: typeof initialState) =>  {
     state.finallyPrice = state.cart.reduce((acc, item) => {
         const discount = item.discount ?? 0;
         const discountedPrice = item.price * (1 - discount / 100);

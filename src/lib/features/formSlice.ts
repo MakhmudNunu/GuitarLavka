@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { act } from "react";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL
 
@@ -7,12 +8,20 @@ interface IFormsState {
     invites: IInviteForm[]
     optApplication: IApplicationForm[]
     feedbacks: IFeedbackForm[]
+    orders: IPlacingAnOrder[]
+    oneClickOrders: IOneClickOrder[]
+    ordersStatus: 'idle' | 'loading' | 'succeeded' | 'failed'
+    oneClickOrdersStatus: 'idle' | 'loading' | 'succeeded' | 'failed'
 }
 
 const initialState: IFormsState = {
     invites: [],
     optApplication: [],
-    feedbacks: []
+    feedbacks: [],
+    orders: [],
+    oneClickOrders: [],
+    ordersStatus: 'idle',
+    oneClickOrdersStatus: 'idle'
 };
 
 export const addInvite = createAsyncThunk(
@@ -47,6 +56,22 @@ export const addApplication = createAsyncThunk(
     }
 )
 
+export const addOrder = createAsyncThunk<IPlacingAnOrder, IPlacingAnOrder>(
+    'forms/addOrder',
+    async (order) => {
+        const response = await axios.post(`${API_URL}orders`, order)
+        return response.data
+    }
+)
+
+export const addOneClickOrder = createAsyncThunk(
+    'forms/oneClickOrder',
+    async (order: IOneClickOrder) => {
+        const response = await axios.post(`${API_URL}oneClickOrders`, order)
+        return response.data
+    }
+)
+
 const formsSlice = createSlice({
     name: "forms",
     initialState,
@@ -72,6 +97,30 @@ const formsSlice = createSlice({
             // Добавить заявку
             .addCase(addApplication.fulfilled, (state, action) => {
                 state.optApplication.push(action.payload)
+            })
+
+            //Добавить заказ
+            .addCase(addOrder.pending, (state) => {
+                state.ordersStatus = 'loading'
+            })
+            .addCase(addOrder.fulfilled, (state, action) => {
+                state.ordersStatus = 'succeeded'
+                state.orders.push(action.payload)
+            })
+            .addCase(addOrder.rejected, (state) => {
+                state.ordersStatus = 'failed'
+            })
+
+            //OneClick Заказ
+            .addCase(addOneClickOrder.pending, (state) => {
+                state.oneClickOrdersStatus = 'loading'
+            })
+            .addCase(addOneClickOrder.fulfilled, (state, action) => {
+                state.oneClickOrdersStatus = 'succeeded'
+                state.oneClickOrders.push(action.payload)
+            })
+            .addCase(addOneClickOrder.rejected, (state) => {
+                state.oneClickOrdersStatus = 'failed'
             })
     }
 });

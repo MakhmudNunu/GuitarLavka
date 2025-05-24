@@ -19,7 +19,7 @@ const CatalogPagination: React.FC<{ products: IProducts[] }> = ({ products }) =>
   const currentProducts = products.slice(startIdx, startIdx + itemsPerPage);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [currentPage, dispatch]);
 
   return (
