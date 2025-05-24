@@ -22,13 +22,13 @@ export default function RootLayout({
         <link rel="icon" href="/assets/images/logo.svg" />
       </head>
       <body>
-        <Header />
-        <main>
-          <StoreProvider>
+        <StoreProvider>
+          <Header />
+          <main>
             {children}
-          </StoreProvider>
-        </main>
-        <Footer />
+          </main>
+          <Footer />
+        </StoreProvider>
       </body>
     </html>
   );

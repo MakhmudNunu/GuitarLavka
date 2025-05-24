@@ -25,7 +25,19 @@ const CartCheck = () => {
                 </div>
             </div>
             <label><input type="text" placeholder='Укажите промо-код' /></label>
-            <button>Перейти к оформлению </button>
+            {
+                finallyCount >= 1 ? (
+                    <Link href={'/PlacingAnOrder'} >
+                        <button style={{
+                            cursor: 'pointer'
+                        }}>
+                            Перейти к оформлению
+                        </button>
+                    </Link>
+                ) : (
+                    'Корзина пуста'
+                )
+            }
             <Link href={'/Catalog'}>
                 <div className={styles.check__reload}>
                     <Image src={'/assets/images/reload.svg'} width={25} height={25} alt='reload' />

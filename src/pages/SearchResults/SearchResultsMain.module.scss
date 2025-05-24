@@ -1,0 +1,14 @@
+.products {
+    &__container {
+        width: 1221px;
+        margin-left: 5%;
+
+        &__content {
+            &__main {
+                display: flex;
+                margin-top: 25px;
+                justify-content: space-between;
+            }
+        }
+    }
+}

@@ -7,6 +7,8 @@
         box-shadow: 0 4px 15px 1px rgba(255, 255, 255, 0.24);
         background: #131218;
         border-radius: 15px;
+        position: sticky;
+        top: 50px;
 
         h3 {
             border-bottom: 2px solid #ea8305;
@@ -80,6 +82,7 @@
         align-items: center;
         column-gap: 6px;
         margin-top: 5px;
+
         h3 {
             font-family: var(--font-family);
             font-weight: 400;

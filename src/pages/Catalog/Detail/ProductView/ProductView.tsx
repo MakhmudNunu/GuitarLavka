@@ -9,15 +9,19 @@ import Image from 'next/image'
 import Star from '@/shared/ui/Star'
 import Link from 'next/link'
 import { addToCart, fetchCart } from '@/lib/features/cartSlice'
+import OneClick from './OneClick/OneClick'
 
 const ProductView = () => {
 
-    const audioRef = useRef<HTMLAudioElement>(null)
-    const [isPlaying, setIsPlaying] = useState(false)
+
 
     const dispatch = useAppDispatch()
     const { product } = useAppSelector((state) => state.products)
     const { cart } = useAppSelector((state) => state.cart)
+    const [showPopUp, setShowPopUp] = useState('')
+    const [orderType, setOrderType] = useState('')
+    const audioRef = useRef<HTMLAudioElement>(null)
+    const [isPlaying, setIsPlaying] = useState(false)
 
     const location = usePathname()
     let id = location?.split('/').pop()
@@ -36,6 +40,10 @@ const ProductView = () => {
 
     const addedToCart = cart?.find(item => item.id === idLocate)
 
+    const handleShowPopUp = (orderType: string, popUp: string) => {
+        setOrderType(orderType)
+        setShowPopUp(popUp)
+    }
 
     const handleAddToCart = () => {
         if (!product || typeof product.id !== 'number') return;
@@ -118,7 +126,7 @@ const ProductView = () => {
                                 <div className={styles.productView__content__right__bottom__top}>
                                     <div className={styles.productView__content__right__bottom__top__left}>
                                         <h3>₽{product.price}</h3>
-                                        <h4>В рассрочку от {product.price / 10} ₽</h4>
+                                        <h4 onClick={() => handleShowPopUp('installment', 'installment')}>В рассрочку от {product.price / 10} ₽</h4>
                                         {
                                             addedToCart ? (
                                                 <button
@@ -157,7 +165,14 @@ const ProductView = () => {
                                                 <Image src={'/assets/images/socials-yellow/twitter.svg'} width={22} height={22} alt='twitter' />
                                             </Link>
                                         </div>
-                                        <button>КУПИТЬ В 1 КЛИК</button>
+                                        <button
+                                            onClick={() => handleShowPopUp('oneClickBuy', 'oneClickBuy')}
+                                            style={{
+                                                cursor: 'pointer'
+                                            }}
+                                        >
+                                            КУПИТЬ В 1 КЛИК
+                                        </button>
                                     </div>
                                 </div>
                                 <div className={styles.productView__content__right__bottom__bottom}>
@@ -181,6 +196,15 @@ const ProductView = () => {
                     <p>Загрузка...</p>
                 )}
             </div>
+            {showPopUp && (
+                <OneClick
+                    orderType={orderType}
+                    productName={product?.title || ''}
+                    productType={product?.type || ''}
+                    productId={product?.id || 0}
+                    onClose={() => setShowPopUp('')}
+                />
+            )}
         </section>
     )
 }

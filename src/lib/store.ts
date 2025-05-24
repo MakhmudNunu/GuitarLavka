@@ -5,6 +5,7 @@ import cartReducer from './features/cartSlice'
 import favoritesReducer from './features/favoriteSlice'
 import filtersReducer from './features/filtersSlice'
 import formsReducer from './features/formSlice'
+import searchReducer from './features/searchSlice'
 
 export const makeStore = () => {
     return configureStore({
@@ -13,7 +14,8 @@ export const makeStore = () => {
             cart: cartReducer,
             favorites: favoritesReducer,
             filtres: filtersReducer,
-            forms: formsReducer
+            forms: formsReducer,
+            search: searchReducer
         },
     })
 }
